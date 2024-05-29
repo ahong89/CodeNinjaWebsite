@@ -1,0 +1,43 @@
+#TasksContainer {
+    background-color: rgb(253, 253, 253);
+    width: 50vw;
+    height: 100%;
+}
+
+#TaskTitle {
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+#TaskList {
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 40px;
+    border-collapse: collapse;
+}
+
+#TaskListHeader{
+    font-size: 15px;
+    font-style: italic;
+    height: 50px;
+}
+
+#TaskList .Task {
+    width: 50%;
+    height: 50px;
+    text-align: left;
+    /* border-top: solid 1px black; */
+}
+
+tr th {
+    border-bottom: 1px rgb(139, 139, 139) solid;
+}
+
+#TaskList .Task:hover {
+    background-color: rgb(200, 200, 200);
+    transition: 0.2s;
+}
+
+#TaskListHeader > th {
+    text-align: left;
+}
