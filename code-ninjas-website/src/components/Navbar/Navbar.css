@@ -1,5 +1,9 @@
 #NavbarContainer {
-    background-color: navy;
+    background-color: #ffffff;
     height: 6vw;
     align-content: center;
+}
+
+#NavbarTitle {
+    text-align: center;
 }
