@@ -1,19 +1,18 @@
 #TasksContainer {
     background-color: #ffffff;
-    width: 50vw;
+    width: 48vw;
     height: 100%;
 }
 
 #TaskTitle {
-    padding-top: 15px;
-    padding-left: 30px;
+    text-align: left;
+    padding: 2% 96% 0 4%;
 }
 
 #TaskList {
-    width: 100%;
-    margin-top: 40px;
-    margin-left: 40px;
+    width: 90%;
     border-collapse: collapse;
+    margin: 2% auto 0;
 }
 
 #TaskListHeader{
@@ -26,12 +25,10 @@
     width: 50%;
     height: 50px;
     text-align: left;
-    /* border-top: solid 1px black; */
 }
 
 tr th {
     border-bottom: 1px rgb(139, 139, 139) solid;
-    border-radius: 5px;
 }
 
 #TaskList .Task:hover {
