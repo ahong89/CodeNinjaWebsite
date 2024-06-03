@@ -2,6 +2,7 @@ import './StudentPage.css';
 import Navbar from './Navbar/Navbar.js'
 import Profile from './Profile/Profile.js'
 import Tasks from './Tasks/Tasks.js'
+import Progress from './Progress/Progress.js'
 import useToken from "../useToken.js";
 
 function StudentPage() {
@@ -16,6 +17,9 @@ function StudentPage() {
           <div className="Tab">
               <Tasks/>
           </div>
+      </div>
+      <div className="Tab" id="Progress">
+        <Progress />
       </div>
     </div>
   );

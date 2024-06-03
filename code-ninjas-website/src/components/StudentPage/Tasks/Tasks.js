@@ -13,17 +13,17 @@ function Tasks(props) {
                 <tr className="Task">
                     <th>Complete the weekly prompt</th>
                     <th>5/30/24</th>
-                    <th>50%</th>
+                    <th>Completed</th>
                 </tr>
                 <tr className="Task">
                     <th>Start working on project</th>
                     <th>6/1/24</th>
-                    <th>60%</th>
+                    <th>Not started</th>
                 </tr>
                 <tr className="Task">
                     <th>Finish last week's work</th>
                     <th>6/23/24</th>
-                    <th>40%</th>
+                    <th>In progress</th>
                 </tr>
             </table>
         </div>

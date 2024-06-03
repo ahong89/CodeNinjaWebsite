@@ -1,13 +1,10 @@
 #NavbarContainer {
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     height: 6vw;
+    padding-top: 1.5vw;
     align-content: center;
-    background-image: linear-gradient(rgba(52,58,94,255), rgba(33,34,62,255), rgba(52,58,94,255));
 }
 
 #NavbarTitle {
-    text-align: center;
+    text-align: left;
+    padding-left: 3vw;
 }
