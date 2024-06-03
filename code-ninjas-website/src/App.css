@@ -10,13 +10,13 @@ body {
 #Main {
     display: flex;
     flex-direction: horizontal;
+    justify-content: space-evenly;
     height: 50vh;
     overflow: hidden;
-    margin: 10px;
+    margin: 10px 0px;
 }
 
 .Tab {
-    margin: 10px;
     overflow: hidden;
     border-radius: 20px;
 }
