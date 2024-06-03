@@ -26,7 +26,7 @@ function Login(props) {
             data:{
               email: loginForm.email,
               password: loginForm.password
-             }
+            }
           })
           .then((response) => {
             props.setToken(response.data.access_token)

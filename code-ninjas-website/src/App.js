@@ -17,7 +17,7 @@ function App() {
           <Route path="/login" element={<Login setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
           <Route path="/student" element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <StudentPage/>
+              <StudentPage token={token}/>
             </PrivateRoute> 
           }/>
         </Routes>

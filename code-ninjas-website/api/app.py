@@ -93,9 +93,9 @@ def my_profile():
     response_body = userData_database.userData.find_one({
         "email": current_user
     })
-
+    del response_body['_id']
     if response_body:
-        response = json.dumps(response_body, default=str)
-        return response
+        profile = json.dumps(response_body)
+        return profile
 
     return {"msg": "Something went wrong with your token"}, 400
