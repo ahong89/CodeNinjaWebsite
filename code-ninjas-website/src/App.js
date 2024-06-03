@@ -1,14 +1,27 @@
 import './App.css';
 import StudentPage from './components/StudentPage/StudentPage.js'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './components/LoginPage/Login/Login.js'
+import PrivateRoute from './components/LoginPage/PrivateRoute.js'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import useToken from "./components/useToken.js";
+import { useState } from 'react';
 
 function App() {
   const { token, removeToken, setToken } = useToken();
-  
+  const [ isAuthenticated, setIsAuthenticated ] = useState(true);
+
   return (
     <div className="App">
-      <StudentPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
+          <Route path="/student" element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <StudentPage/>
+            </PrivateRoute> 
+          }/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
