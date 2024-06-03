@@ -8,15 +8,15 @@ function StudentPage() {
 
   return (
     <div className="App">
-        <Navbar />
-        <div id="Main">
-            <div className="Tab">
-                <Profile />
-            </div>
-            <div className="Tab">
-                <Tasks/>
-            </div>
-        </div>
+      <Navbar />
+      <div id="Main">
+          <div className="Tab">
+              <Profile />
+          </div>
+          <div className="Tab">
+              <Tasks/>
+          </div>
+      </div>
     </div>
   );
 }

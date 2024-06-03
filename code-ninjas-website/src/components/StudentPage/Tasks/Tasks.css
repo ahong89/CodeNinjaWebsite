@@ -1,5 +1,4 @@
 #TasksContainer {
-    background-color: #ffffff;
     width: 48vw;
     height: 100%;
 }
@@ -34,6 +33,7 @@ tr th {
 #TaskList .Task:hover {
     background-color: rgb(200, 200, 200);
     transition: 0.2s;
+    cursor: pointer;
 }
 
 #TaskListHeader > th {

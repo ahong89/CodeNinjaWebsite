@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "Poppins", san-serif;
 }
 
 body {
@@ -14,12 +17,28 @@ body {
     justify-content: space-evenly;
     height: 50vh;
     overflow: hidden;
-    margin: 1.5vw 0px;
+    margin: 2vw 0px;
 }
 
 .Tab {
     overflow: hidden;
     border-radius: 1vw;
+    /* background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2); */
+    background-image: linear-gradient(rgba(52,58,94,255), rgba(33,34,62,255), rgba(52,58,94,255));
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    /* background: url('student-background2.jpg') no-repeat; */
+    /* color: rgb(166, 159, 174); */
+    background-color: rgba(14,34,55,255);
+    color: white;
+    background-size: cover;
+    background-position: center;
 }
 
 
