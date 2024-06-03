@@ -16,14 +16,14 @@
 }
 
 #TaskListHeader{
-    font-size: 15px;
+    font-size: 1vw;
     font-style: italic;
-    height: 50px;
+    height: 3vw;
 }
 
 #TaskList .Task {
     width: 50%;
-    height: 50px;
+    height: 3vw;
     text-align: left;
 }
 

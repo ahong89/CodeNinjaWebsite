@@ -12,7 +12,6 @@
 #UserProfile {
     display: flex;
     flex-direction: column;
-    max-width: fit-content;
     width: 25%;
     height: 70%;
     margin: 2% auto;  
