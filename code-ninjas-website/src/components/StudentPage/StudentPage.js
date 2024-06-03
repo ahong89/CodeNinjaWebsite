@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Navbar from './Navbar/Navbar.js'
 import Profile from './Profile/Profile.js'
 import Tasks from './Tasks/Tasks.js'
+import Progress from './Progress/Progress.js'
 import useToken from "../useToken.js";
 import axios from 'axios';
 
@@ -48,6 +49,9 @@ function StudentPage(props) {
             <div className="Tab">
                 <Tasks userData={userData}/>
             </div>
+        </div>
+        <div className="Tab" id="Progress">
+          <Progress />
         </div>
     </div>
   );

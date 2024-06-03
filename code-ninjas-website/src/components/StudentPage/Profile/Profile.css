@@ -1,5 +1,4 @@
 #ProfileContainer {
-    background-color: #ffffff;
     width: 48vw;
     height: 100%;
 }
@@ -12,17 +11,39 @@
 #UserProfile {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 25%;
     height: 70%;    
-    margin: 2% auto;  
+    margin: 0 auto 0;
 }
 
 .Description {
     text-align: center;
 }
 
-#ProfilePicture {
+#ProfilePictureContainer {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 12vw;
+    height: 12vw;
     border-radius: 100%;
-    clip-path: circle();
-    object-fit: cover;  
+}
+
+#ProfilePicture {
+    min-width: 12vw;
+    min-height: 12vw;
+    object-fit: fill;
+}
+
+#Name {
+    font-size: 1.5vw;
+}
+
+#Join {
+    font-size: 0.9vw;
+}
+
+#NinjaBucks {
+    font-size: 1.5vw;
 }
