@@ -12,30 +12,38 @@ client = MongoClient(connection_string)
 databases = client.list_database_names()
 userData_database = client.userData
 collections = userData_database.list_collection_names()
-print(collections)
+# print(collections)
 
 def insert_test_doc():
     collection = userData_database.userData
     test_document = {
-        "user": "neiphu",
+        "email": "honga010807@gmail.com",
+        "name": "Andrew Hong",
+        "join_date": "6/3/2024",
         "nb": 4000,
-        "tasks": {
-            "Complete the weekly prompt": {
-                "duedate": "5/30/2024",
-                "progress": 60
-            },
-            "Start the unity project": {
-                "duedate": "6/2/2024",
-                "progress": 0
-            }
-        }
+        "tasks": [
+            [
+                "Complete the weekly prompt",
+                "5/30/2024",
+                "complete"
+            ],
+            [
+                "Start the unity project",
+                "6/2/2024",
+                "in progress"
+            ]
+        ]
     }
     inserted_id =  collection.insert_one(test_document).inserted_id
     print(inserted_id)
 
 def read_test_doc():
     document = userData_database.userData.find_one({"user": "neiphu"})
-    print(document["nb"])
+    print(document["tasks"])
 
-read_test_doc()
+def delete_doc():
+    output = userData_database.userData.delete_one({"email": "honga010807@gmail.com"})
+    print(output)
+
+insert_test_doc()
 

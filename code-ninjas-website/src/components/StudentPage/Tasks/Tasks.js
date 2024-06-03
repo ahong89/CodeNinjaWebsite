@@ -1,33 +1,40 @@
 import './Tasks.css'
 
 function Tasks(props) {
+    let body = props.userData.tasks;
     return (
         <div id="TasksContainer">
             <h1 id="TaskTitle">Tasks</h1>
             <table id="TaskList">
-                <tr id="TaskListHeader">
-                    <th>TASK NAME</th>
-                    <th>DUE DATE</th>
-                    <th>COMPLETION</th>
-                </tr>
-                <tr className="Task">
-                    <th>Complete the weekly prompt</th>
-                    <th>5/30/24</th>
-                    <th>Completed</th>
-                </tr>
-                <tr className="Task">
-                    <th>Start working on project</th>
-                    <th>6/1/24</th>
-                    <th>Not started</th>
-                </tr>
-                <tr className="Task">
-                    <th>Finish last week's work</th>
-                    <th>6/23/24</th>
-                    <th>In progress</th>
-                </tr>
+                <thead>
+                    <tr id="TaskListHeader">
+                        <th>TASK NAME</th>
+                        <th>DUE DATE</th>
+                        <th>COMPLETION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {body?.map((rowContent, rowID) => (
+                        <TableRow
+                            rowContent={rowContent}
+                            key={rowID}
+                        />
+                    ))}
+                </tbody>
             </table>
         </div>
     )
+}
+
+function TableRow(props) {
+    let row = props.rowContent;
+    return (
+        <tr className="Task">
+            {row?.map((val, rowID) => (
+                <th key={rowID}>{val}</th>
+            ))}
+        </tr>
+    );
 }
 
 export default Tasks;
