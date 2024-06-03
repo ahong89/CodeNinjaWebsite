@@ -13,12 +13,12 @@ body {
     justify-content: space-evenly;
     height: 50vh;
     overflow: hidden;
-    margin: 10px 0px;
+    margin: 1.5vw 0px;
 }
 
 .Tab {
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 1vw;
 }
 
 
