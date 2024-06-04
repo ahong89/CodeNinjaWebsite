@@ -1,0 +1,9 @@
+#StudentProfileContainer {
+    width: 68vw;
+    height: 100%;
+}
+
+#StudentProfileTitle {
+    text-align: left;
+    padding: 2% 60% 0 4%;
+}

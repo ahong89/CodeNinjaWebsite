@@ -3,7 +3,13 @@ import { Route, Navigate } from 'react-router-dom';
 
 function PrivateRoute(props) {
     return (
-        props.isAuthenticated ? <>{props.children}</> : <Navigate to="/login"/>
+        props.isAuthenticated ? 
+        <>
+            props.isTeacher ?
+                {props.teacher}
+                : {props.children}
+        </>
+        : <Navigate to="/login"/>
     );
 }
 
