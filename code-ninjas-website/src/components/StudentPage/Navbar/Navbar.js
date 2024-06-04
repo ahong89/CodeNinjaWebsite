@@ -1,4 +1,5 @@
 import './Navbar.css';
+import { FaUserNinja } from "react-icons/fa";
 import axios from 'axios';
 
 function Navbar(props) {
@@ -24,6 +25,7 @@ function Navbar(props) {
 
     return (
         <div id="NavbarContainer">
+            <FaUserNinja id="Icon"/>
             <h1 id="NavbarTitle">Student Dashboard</h1>
             <button id="LogoutButton" onClick={handleLogout}>Logout</button>
         </div>

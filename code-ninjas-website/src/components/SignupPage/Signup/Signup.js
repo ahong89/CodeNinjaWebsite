@@ -2,6 +2,7 @@ import './Signup.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { IoBookSharp } from "react-icons/io5";
 import axios from "axios";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -106,6 +107,17 @@ function Signup(props) {
                             value={signupForm.password}
                         required/>
                         <FaLock className="icon" />
+                    </div>
+                    <div className="input-box">
+                    <input 
+                            // onChange={handleChange}
+                            type="password" 
+                            // text={signupForm.password}
+                            name="code" 
+                            placeholder="Teacher Code"
+                            // value={signupForm.password}
+                        required/>
+                        <IoBookSharp className="icon" />
                     </div>
 
                     <button type="submit" className="btn" onClick={handleSignup}>Register</button>

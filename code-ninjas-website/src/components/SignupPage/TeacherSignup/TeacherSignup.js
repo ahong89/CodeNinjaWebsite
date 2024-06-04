@@ -107,6 +107,17 @@ function TeacherSignup(props) {
                         required/>
                         <FaLock className="icon" />
                     </div>
+                    <div className="input-box">
+                    <input 
+                            // onChange={handleChange}
+                            type="password" 
+                            // text={signupForm.password}
+                            name="code" 
+                            placeholder="Teacher Code"
+                            // value={signupForm.password}
+                        required/>
+                        <IoBookSharp className="icon" />
+                    </div>
 
                     <button type="submit" className="btn" onClick={handleSignup}>Register</button>
 

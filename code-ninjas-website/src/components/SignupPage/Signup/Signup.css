@@ -58,6 +58,7 @@
 
 .input-box .icon {
     position: absolute;
+    margin-top: 0.22vw;
     right: 1.5vw;
     top: 50%;
     transform: translateY(-50%);
