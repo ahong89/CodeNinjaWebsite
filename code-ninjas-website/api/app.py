@@ -89,7 +89,7 @@ def refresh_expiring_jwts(response):
 @jwt_required()
 def my_profile():
     current_user = get_jwt_identity()
-    print(current_user)
+    print("User, " + current_user + ", made a request for their profile")
     response_body = userData_database.userData.find_one({
         "email": current_user
     })
@@ -100,5 +100,33 @@ def my_profile():
 
     return {"msg": "Something went wrong with your token"}, 400
 
+@api.route('/setnb', methods=["POST"])
+@jwt_required()
+def set_ninjabucks():
+    current_user = get_jwt_identity()
+    teacherData = userData_database.userData.find_one({"email": current_user})
+    if not teacherData['isTeacher']:
+        return {"msg": "Account not authorized to complete action"}, 400
+    
+    studentQuery = {"email": request.json.get("email")}
+    studentData = userData_database.userData.find_one(studentQuery)
+    if studentData:
+        nb = request.json.get("newnb")
+        newData = { "$set": { 'nb': nb } }
+        userData_database.userData.update_one(studentQuery, newData)
+        return {"msg": studentData['email'] + "'s ninja bucks have been updated successfully"}, 200
+    
+    return {"msg": "Student not found"}, 500
+
+@api.route('/settasks', methods=["POST"])
+@jwt_required()
+def set_tasks():
+    print("lmao i didn't finish this yet")
+    
+    return {"msg": "Student not found"}, 500
+
+hostip = '192.168.86.20'
+port = 50100
 if __name__ == '__main__':
-    serve(api, host='192.168.86.20', port=50100, threads=2)
+    print("Server running on: "  + hostip + ":" + str(port))
+    serve(api, host=hostip, port=port, threads=2)
