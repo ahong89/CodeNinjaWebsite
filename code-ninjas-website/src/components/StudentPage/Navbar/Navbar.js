@@ -24,7 +24,7 @@ function Navbar(props) {
 
     return (
         <div id="NavbarContainer">
-            <h1 id="NavbarTitle">Dashboard</h1>
+            <h1 id="NavbarTitle">Student Dashboard</h1>
             <button id="LogoutButton" onClick={handleLogout}>Logout</button>
         </div>
     )
