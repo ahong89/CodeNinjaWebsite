@@ -3,9 +3,19 @@
     height: 100%;
 }
 
+#ProfileTitleContainer {
+    display: flex;
+    flex-direction: horizontal;
+}
+
 #ProfileTitle {
     text-align: left;
-    padding: 2% 96% 0 4%;
+    padding: 2% 76.5% 0 4%;
+}
+
+#ProfileIcon {
+    font-size: 1.8vw;
+    margin: 2.7% 0% 0% 0%;
 }
 
 #UserProfile {

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    font-family: "Poppins", san-serif;
+    font-weight: lighter;
+}
+
+body {
+    font-size: 1vw;
+}
+
+#MainContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.AccountType {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(38,40,51,255);
+    color: white;
+    background-size: cover;
+    background-position: center;
+}

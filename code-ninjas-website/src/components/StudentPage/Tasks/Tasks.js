@@ -1,10 +1,17 @@
 import './Tasks.css'
+import { BiTask } from "react-icons/bi";
+import { BsListTask } from "react-icons/bs";
+
 
 function Tasks(props) {
     let body = props.userData.tasks;
     return (
         <div id="TasksContainer">
-            <h1 id="TaskTitle">Tasks</h1>
+            <div id="TaskTitleContainer">
+                <h1 id="TaskTitle">Tasks</h1>
+                <BsListTask id="TaskIcon"/>
+            </div>
+            
             <table id="TaskList">
                 <thead>
                     <tr id="TaskListHeader">

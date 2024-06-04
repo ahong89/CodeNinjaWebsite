@@ -1,11 +1,22 @@
+#ProgressTitleContainer {
+    display: flex;
+    flex-direction: horizontal;
+    width: 100%;
+}
+
 #ProgressTitle {
     text-align: left;
-    padding: 2% 96% 0 4%;
+    padding: 0.85% 85.85% 0 1.9%;
+}
+
+#ProgressIcon {
+    font-size: 1.8vw;
+    margin: 1.2% 0% 0% 0%;
 }
 
 
 #ProgressContainer {
-    width: 40vw;
+    width: 97.5vw;
     height: 30vh;
 }
 

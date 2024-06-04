@@ -3,9 +3,19 @@
     height: 100%;
 }
 
+#TaskTitleContainer {
+    display: flex;
+    flex-direction: horizontal;
+}
+
 #TaskTitle {
     text-align: left;
-    padding: 2% 96% 0 4%;
+    padding: 2% 77.5% 0 4%;
+}
+
+#TaskIcon {
+    font-size: 2vw;
+    margin: 2.5% 0% 0% 0%;
 }
 
 #TaskList {

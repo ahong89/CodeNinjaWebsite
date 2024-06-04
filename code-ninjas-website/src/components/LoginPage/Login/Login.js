@@ -1,5 +1,5 @@
 import './Login.css';
-import { FaUser } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import axios from "axios";
 import { useState } from 'react';
@@ -60,7 +60,7 @@ function Login(props) {
                         placeholder="Email"
                         value={loginForm.email}
                     required/>
-                    <FaUser className="icon"/>
+                    <MdEmail className="icon"/>
                 </div>
                 <div className="input-box">
                 <input 
