@@ -5,15 +5,15 @@
     font-family: "Poppins", san-serif;
 }
 
-.LoginContainer {
+.SignupContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover;
     background-position: center;
-    background-image: url(login-background.jpg);
     height: 100vh;
     width: 100vw;
+    background-image: url(signup-background.jpg);
 }
 
 .wrapper {
@@ -64,27 +64,6 @@
     font-size: 1.5vw;
 }
 
-.wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.1vw;
-    margin: -1.15vw 0 1.15vw;
-}
-
-.remember-forgot label input {
-    accent-color: #fff;
-    margin-right: 0.225vw;
-}
-
-.remember-forgot a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
 .wrapper .btn {
     width: 100%;
     height: 3.4vw;
@@ -97,20 +76,4 @@
     font-size: 1.3vw;
     color: #333;
     font-weight: 600;
-}
-
-.wrapper .register-link {
-    font-size: 1.15vw;
-    text-align: center;
-    margin: 1.5vw 0 1.2vw;
-}
-
-.register-link p a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link p a:hover {
-    text-decoration: underline;
 }

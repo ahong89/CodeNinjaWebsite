@@ -10,7 +10,7 @@ function Profile(props) {
                     <img src={profilePicture} id="ProfilePicture" alt="Profile Picture"/>
                 </div>
                 <h1 id="Name" className="Description">Andrew Hong</h1>
-                <h3 id="Join" className="Description">Joined Mar 2022</h3>
+                <h3 id="Join" className="Description">Joined March 2022</h3>
                 <h1 id="NinjaBucks" className="Description">2000 NB</h1>
             </div>
         </div>

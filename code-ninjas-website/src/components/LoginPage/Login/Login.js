@@ -1,4 +1,6 @@
 import './Login.css';
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 import axios from "axios";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
@@ -58,7 +60,7 @@ function Login(props) {
                         placeholder="Email"
                         value={loginForm.email}
                     required/>
-                    <i className='bx bxs-user'></i>
+                    <FaUser className="icon"/>
                 </div>
                 <div className="input-box">
                 <input 
@@ -69,7 +71,7 @@ function Login(props) {
                         placeholder="Password"
                         value={loginForm.password}
                     required/>
-                    <i className='bx bxs-lock-alt' ></i>
+                    <FaLock className="icon"/>
                 </div>
 
                 <div className="remember-forgot">
