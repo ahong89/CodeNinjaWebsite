@@ -19,10 +19,9 @@ function Login(props) {
     }
 
     function handleLogin(event) {
-        console.log(loginForm)
         axios({
             method: "POST",
-            url:"https://108.35.201.228/token",
+            url:"/token",
             data:{
               email: loginForm.email,
               password: loginForm.password
