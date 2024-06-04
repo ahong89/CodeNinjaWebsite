@@ -6,7 +6,7 @@ import os
 from pymongo import MongoClient
 from passlib.hash import pbkdf2_sha256
 from dotenv import load_dotenv, find_dotenv
-
+from waitress import serve
 
 # flask
 api = Flask(__name__)
@@ -99,3 +99,6 @@ def my_profile():
         return profile
 
     return {"msg": "Something went wrong with your token"}, 400
+
+if __name__ == '__main__':
+    serve(api, host='192.168.86.20', port=50100, threads=2)
