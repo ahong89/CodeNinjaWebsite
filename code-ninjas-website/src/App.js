@@ -17,8 +17,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
-          <Route path="/signup" element={<Signup />}/>
           <Route path="/account-type" element={<AccountType />}/>
+          <Route path="/signup" element={<Signup setToken={setToken} setAuthentication={setIsAuthenticated}/>}/>
           <Route path="/student" element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
               <StudentPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken}/>

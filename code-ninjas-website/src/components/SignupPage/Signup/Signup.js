@@ -7,6 +7,66 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Signup(props) {
+    const navigate = useNavigate();
+
+    const [signupForm, setSignupForm] = useState({
+        name: "",
+        email: "",
+        password: ""
+    })
+
+    function handleChange(event) { 
+        const {value, name} = event.target
+        setSignupForm(prevNote => ({
+            ...prevNote, [name]: value})
+        )
+    }
+
+    function handleSignup(event) {
+        axios({
+            method: "POST",
+            url:"/signup",
+            data:{
+                name: signupForm.name,
+                email: signupForm.email,
+                password: signupForm.password
+            }
+          })
+          .then((response) => {
+            axios({
+                method: "POST",
+                url:"/token",
+                data:{
+                  email: signupForm.email,
+                  password: signupForm.password
+                }
+              })
+              .then((response) => {
+                props.setToken(response.data.access_token)
+                props.setAuthentication(true)
+                navigate('/student')
+              }).catch((error) => {
+                if (error.response) {
+                  console.log(error.response)
+                  console.log(error.response.status)
+                  console.log(error.response.headers)
+                  console.log(props.isAuthenticated)
+                }
+                navigate('/login')
+              }
+            )
+          }).catch((error) => {
+            if (error.response) {
+              console.log(error.response)
+              console.log(error.response.status)
+              console.log(error.response.headers)
+              console.log(props.isAuthenticated)
+            }
+          }
+        )
+
+        event.preventDefault()
+    }
 
     return (
         <div className="SignupContainer">
@@ -16,39 +76,39 @@ function Signup(props) {
 
                     <div className="input-box">
                     <input 
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             type="text" 
-                            // text={loginForm.password}
+                            text={signupForm.name}
                             name="name" 
                             placeholder="Name"
-                            // value={loginForm.password}
+                            value={signupForm.name}
                         required/>
                         <FaUser className="icon" />
                     </div>
                     <div className="input-box">
                         <input
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             type="email" 
-                            // text={loginForm.email}
+                            text={signupForm.email}
                             name="email" 
                             placeholder="Email"
-                            // value={loginForm.email}
+                            value={signupForm.email}
                         required/>
                         <MdEmail className="icon"/>
                     </div>
                     <div className="input-box">
                     <input 
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             type="password" 
-                            // text={loginForm.password}
+                            text={signupForm.password}
                             name="password" 
                             placeholder="Password"
-                            // value={loginForm.password}
+                            value={signupForm.password}
                         required/>
                         <FaLock className="icon" />
                     </div>
 
-                    <button type="submit" className="btn">Register</button>
+                    <button type="submit" className="btn" onClick={handleSignup}>Register</button>
 
                 </form>
             </div>
