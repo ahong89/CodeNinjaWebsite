@@ -14,7 +14,7 @@ function StudentPage(props) {
   function getData() {
     axios({
       method: "GET",
-      url: "https://108.35.201.228/profile",
+      url: "/profile",
       headers: {
         Authorization: 'Bearer ' + props.token
       }
@@ -41,7 +41,7 @@ function StudentPage(props) {
 
   return (
     <div className="App">
-        <Navbar />
+        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
         <div id="Main">
             <div className="Tab">
                 <Profile userData={userData}/>

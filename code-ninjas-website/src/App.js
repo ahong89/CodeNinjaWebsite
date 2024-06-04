@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 function App() {
   const { token, removeToken, setToken } = useToken();
-  const [ isAuthenticated, setIsAuthenticated ] = useState(true);
+  const [ isAuthenticated, setIsAuthenticated ] = useState(token !== null);
 
   return (
     <div className="App">
@@ -17,9 +17,12 @@ function App() {
           <Route path="/login" element={<Login setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
           <Route path="/student" element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <StudentPage token={token}/>
+              <StudentPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken}/>
             </PrivateRoute> 
           }/>
+          <Route path='/' element={isAuthenticated ? 
+              <Navigate to='/student' replace />
+            : <Navigate to='/login' replace />} />
         </Routes>
       </BrowserRouter>
     </div>
