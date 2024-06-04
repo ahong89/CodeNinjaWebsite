@@ -14,7 +14,7 @@ function StudentPage(props) {
   function getData() {
     axios({
       method: "GET",
-      url: "/profile",
+      url: "https://108.35.201.228/profile",
       headers: {
         Authorization: 'Bearer ' + props.token
       }

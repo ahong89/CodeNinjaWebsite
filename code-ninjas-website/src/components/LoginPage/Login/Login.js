@@ -22,7 +22,7 @@ function Login(props) {
         console.log(loginForm)
         axios({
             method: "POST",
-            url:"/token",
+            url:"https://108.35.201.228/token",
             data:{
               email: loginForm.email,
               password: loginForm.password

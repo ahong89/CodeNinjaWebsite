@@ -1,4 +1,6 @@
 #NavbarContainer {
+    display: flex;
+    flex-direction: horizontal;
     height: 6vw;
     padding-top: 1.5vw;
     align-content: center;
@@ -7,4 +9,23 @@
 #NavbarTitle {
     text-align: left;
     padding-left: 3vw;
+}
+
+#LogoutButton {
+    margin-left: 79vw;
+    margin-top: 0.5vh;
+    width: 4vw;
+    height: 2.25vw; 
+    overflow: hidden;
+    border-radius: 0.5vw;
+    border: 0.5px solid rgba(255, 255, 255, 0.551);
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
+    background-color: rgba(38,40,51,255);
+    color: white;
+}
+
+#LogoutButton:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+    transition: 0.2s;
 }
