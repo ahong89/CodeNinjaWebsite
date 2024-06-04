@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
     font-family: "Poppins", san-serif;
     font-weight: lighter;
 }
 
 body {
-    background-color: #cde7eb;
     font-size: 1vw;
 }
 
@@ -24,19 +21,16 @@ body {
 .Tab {
     overflow: hidden;
     border-radius: 1vw;
-    /* background: transparent; */
-    /* backdrop-filter: blur(10px); */
     border: 0.5px solid rgba(255, 255, 255, 0.551);
     box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
     max-width: 97.5vw;
-    /* background-image: linear-gradient(rgba(52,58,94,0.6), rgba(33,34,62,0.6), rgba(52,58,94,0.6)); */
+    /* background: transparent; */
+    /* backdrop-filter: blur(10px); */
 }
 
 .App {
     width: 100vw;
-    height: 105vh;
-    /* background: url('student-background2.jpg') no-repeat; */
-    /* color: rgb(166, 159, 174); */
+    height: 100vh;
     background-color: rgba(38,40,51,255);
     color: white;
     background-size: cover;

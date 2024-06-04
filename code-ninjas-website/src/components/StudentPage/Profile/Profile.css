@@ -31,9 +31,9 @@
 }
 
 #ProfilePicture {
-    min-width: 12vw;
+    /* min-width: 12vw;
     min-height: 12vw;
-    object-fit: fill;
+    object-fit: fill; */
 }
 
 #Name {

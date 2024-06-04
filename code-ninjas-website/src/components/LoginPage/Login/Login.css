@@ -5,29 +5,30 @@
     font-family: "Poppins", san-serif;
 }
 
-body {
+.LoginContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background-size: cover;
     background-position: center;
-    background-image: "./src/assets/login-background.jpg";
+    background-image: url(login-background.jpg);
+    height: 100vh;
+    width: 100vw;
 }
 
 .wrapper {
-    width: 420px;
+    width: 33.3vw;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 0.1vw solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 1vw rgba(0, 0, 0, .2);
     color: white;
-    border-radius: 10px;
-    padding: 30px 40px;
+    border-radius: 1vw;
+    padding: 3vw 3.5vw;
 }
 
 .wrapper h1 {
-    font-size: 36px;
+    font-size: 2.9vw;
     text-align: center;
 }
 
@@ -35,7 +36,7 @@ body {
     position: relative;
     width: 100%;
     height: 50px;
-    margin: 30px 0;
+    margin: 2.4vw 0;
 }
 
 .input-box input {
@@ -44,11 +45,11 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 16px;
+    border: 0.15vw solid rgba(255, 255, 255, .2);
+    border-radius: 4vw;
+    font-size: 1.25vw;
     color: white;
-    padding: 20px 45px 20px 20px;
+    padding: 1.5vw 3.4vw 1.5vw 1.5vw;
 }
 
 .input-box input::placeholder {
@@ -57,22 +58,22 @@ body {
 
 .input-box i {
     position: absolute;
-    right: 20px;
+    right: 1.5vw;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 
 .wrapper .remember-forgot {
     display: flex;
     justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
+    font-size: 1.1vw;
+    margin: -1.15vw 0 1.15vw;
 }
 
 .remember-forgot label input {
     accent-color: #fff;
-    margin-right: 3px;
+    margin-right: 0.225vw;
 }
 
 .remember-forgot a {
@@ -86,22 +87,22 @@ body {
 
 .wrapper .btn {
     width: 100%;
-    height: 45px;
+    height: 3.4vw;
     background: #fff;
     border: none;
     outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10 px rgba(0, 0, 0, .1);
+    border-radius:3.4vw;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, .1);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.3vw;
     color: #333;
     font-weight: 600;
 }
 
 .wrapper .register-link {
-    font-size: 14.5px;
+    font-size: 1.15vw;
     text-align: center;
-    margin: 20px 0 15px;
+    margin: 1.5vw 0 1.2vw;
 }
 
 .register-link p a {
