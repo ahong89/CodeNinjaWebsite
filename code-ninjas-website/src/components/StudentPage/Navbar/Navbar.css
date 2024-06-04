@@ -1,7 +1,7 @@
 #NavbarContainer {
     display: flex;
     flex-direction: horizontal;
-    height: 6vw;
+    height: 5.25vw;
     padding-top: 1.5vw;
     align-content: center;
 }

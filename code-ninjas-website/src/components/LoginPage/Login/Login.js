@@ -45,7 +45,7 @@ function Login(props) {
     }
 
     return(
-        <div className="idk">
+        <div className="LoginContainer">
             <div className="wrapper">
             <form action="">
                 <h1>Login</h1>

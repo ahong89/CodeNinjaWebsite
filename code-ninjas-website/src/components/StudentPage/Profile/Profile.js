@@ -1,5 +1,5 @@
 import './Profile.css'
-import profilePicture from '../../../assets/profilepicture3.jpg'
+import profilePicture from '../../../assets/profilepicture4.png'
 
 function Profile(props) {
     return (
