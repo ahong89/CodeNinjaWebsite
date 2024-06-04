@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Login(props) {
     const navigate = useNavigate();
+    const [ incorrectHidden, setIncorrectHidden ] = useState("hide")
 
     const [loginForm, setloginForm] = useState({
         email: "",
@@ -34,6 +35,7 @@ function Login(props) {
             props.setAuthentication(true)
             navigate('/student')
           }).catch((error) => {
+            setIncorrectHidden("")
             if (error.response) {
               console.log(error.response)
               console.log(error.response.status)
@@ -81,6 +83,11 @@ function Login(props) {
                 <div className="remember-forgot">
                     <label><input type="checkbox"/>Remember me</label>
                     <a href="#">Forgot password?</a>
+                </div>
+
+                <div id="incorrect-details" className={incorrectHidden}>
+                    <p>the login details which you entered are incorrect</p>
+                    <br></br>
                 </div>
 
                 <button type="submit" className="btn" onClick={handleLogin}>Login</button>

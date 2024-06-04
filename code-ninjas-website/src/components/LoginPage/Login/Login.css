@@ -85,6 +85,16 @@
     text-decoration: underline;
 }
 
+#incorrect-details {
+    text-align: center;
+    font-style: italic;
+    color: rgb(206, 3, 50);
+}
+
+.hide {
+    display: none;
+}
+
 .wrapper .btn {
     width: 100%;
     height: 3.4vw;
@@ -97,6 +107,13 @@
     font-size: 1.3vw;
     color: #333;
     font-weight: 600;
+}
+
+.wrapper .btn:active {
+    transition: 0.1s;
+    background: #e7e7e7;
+    box-shadow: 0 0.2vw #666;
+    transform: translateY(0.05vw);
 }
 
 .wrapper .register-link {
