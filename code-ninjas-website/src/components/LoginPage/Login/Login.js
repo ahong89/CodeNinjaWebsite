@@ -46,6 +46,10 @@ function Login(props) {
         event.preventDefault()
     }
 
+    function directToSignup(event) {
+        navigate("/signup")
+    }
+
     return(
         <div className="LoginContainer">
             <div className="wrapper">
@@ -82,7 +86,7 @@ function Login(props) {
                 <button type="submit" className="btn" onClick={handleLogin}>Login</button>
 
                 <div className="register-link">
-                    <p>Don't have an account? <a href="#">Register</a></p>
+                    <p>Don't have an account? <a onClick={directToSignup}>Register</a></p>
                 </div>
             </form>
         </div>

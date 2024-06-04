@@ -31,18 +31,36 @@ userData_database = client.userData
 def signup():
     user = {
         "email": request.json.get("email"),
-        "password": request.json.get("password")
+        "password": pbkdf2_sha256.encrypt(request.json.get("password"))
     }
 
-    user["password"] = pbkdf2_sha256.encrypt(user["password"])
+    userData = {}
+    current_datetime = datetime.now()
+    if request.json.get("isTeacher"):
+        userData = {
+            "email": request.json.get("email"),
+            "name": request.json.get("name"),
+            "join_date": current_datetime.strftime("%m/%d/%Y"),
+            "isTeacher": True
+        }
+    else:
+        userData = {
+            "email": request.json.get("email"),
+            "name": request.json.get("name"),
+            "join_date": current_datetime.strftime("%m/%d/%Y"),
+            "nb": 0,
+            "tasks": [[]],
+            "isTeacher": False
+        }
+    
 
     if userLogin_database.users.find_one({"email": user["email"]}):
         return {"msg": "Email already in use"}, 400
 
-    if userLogin_database.users.insert_one(user):
+    if userLogin_database.users.insert_one(user) and userData_database.userData.insert_one(userData):
         return {"msg": "Sign up succeeded"}, 200
     
-    return {"msg": "Error, signup Failed"}, 400
+    return {"msg": "Error, one or both parts of signup failed"}, 400
 
 
 # logging in
@@ -100,6 +118,22 @@ def my_profile():
 
     return {"msg": "Something went wrong with your token"}, 400
 
+@api.route('/getallstudents', methods=["GET"])
+@jwt_required()
+def get_allstudents():
+    current_user = get_jwt_identity()
+    teacherData = userData_database.userData.find_one({"email": current_user})
+    if not teacherData['isTeacher']:
+        return {"msg": "Account not authorized to complete action"}, 400
+    
+    allStudents = userData_database.userData.find({"isTeacher": False})
+    response = []
+    for student in allStudents:
+        del student['_id']
+        response.append(student)
+        return response, 200
+    return {"msg": "Error"}, 500
+
 @api.route('/setnb', methods=["POST"])
 @jwt_required()
 def set_ninjabucks():
@@ -121,8 +155,17 @@ def set_ninjabucks():
 @api.route('/settasks', methods=["POST"])
 @jwt_required()
 def set_tasks():
-    print("lmao i didn't finish this yet")
-    
+    current_user = get_jwt_identity()
+    teacherData = userData_database.userData.find_one({"email": current_user})
+    if not teacherData['isTeacher']:
+        return {"msg": "Account not authorized to complete action"}, 400
+
+    tasks = request.json.get("tasks")
+    studentQuery = {"email": request.json.get("email")}
+    newData = { "$set": { 'tasks': tasks } }
+    if userData_database.userData.update_one(studentQuery, newData):
+        return {"msg": request.json.get("email") + "'s tasks have been updated successfully"}
+
     return {"msg": "Student not found"}, 500
 
 hostip = '192.168.86.20'
