@@ -59,9 +59,10 @@
 .input-box .icon {
     position: absolute;
     right: 1.5vw;
-    top: 50%;
+    top: 50;
     transform: translateY(-50%);
     font-size: 1.5vw;
+    margin-top: 0.22vw;
 }
 
 .wrapper .remember-forgot {
@@ -129,5 +130,6 @@
 }
 
 .register-link p a:hover {
+    cursor: pointer;
     text-decoration: underline;
 }

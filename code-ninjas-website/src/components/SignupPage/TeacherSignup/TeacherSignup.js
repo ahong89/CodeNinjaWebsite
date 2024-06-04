@@ -1,13 +1,12 @@
-import './Signup.css';
+import './TeacherSignup.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { IoBookSharp } from "react-icons/io5";
 import axios from "axios";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Signup(props) {
+function TeacherSignup(props) {
     const navigate = useNavigate();
 
     const [signupForm, setSignupForm] = useState({
@@ -128,4 +127,4 @@ function Signup(props) {
     );
 }
 
-export default Signup;
+export default TeacherSignup;
