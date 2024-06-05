@@ -5,7 +5,7 @@ import axios from 'axios';
 function StudentPage(props) {
 
   return (
-    <div className="AccountType">
+    <div className="AccountType fade-in">
         <div id="MainAccountTypeContainer">
             <AccountTypeDisplay setAccType={props.setAccType} className="Tab"/>
         </div>

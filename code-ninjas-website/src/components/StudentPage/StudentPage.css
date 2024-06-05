@@ -9,6 +9,19 @@ body {
     font-size: 1vw;
 }
 
+.StudentPageMain {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 #StudentPageMainContainer {
     display: flex;
     flex-direction: horizontal;
