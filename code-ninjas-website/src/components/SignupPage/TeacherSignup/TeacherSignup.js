@@ -2,6 +2,7 @@ import './TeacherSignup.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { IoBookSharp } from "react-icons/io5";
 import axios from "axios";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -124,7 +125,7 @@ function TeacherSignup(props) {
                             placeholder="Teacher Code"
                             value={signupForm.code}
                         required/>
-                        {/* <IoBookSharp className="icon" /> */}
+                        <IoBookSharp className="icon" />
                     </div>
 
                     <button type="submit" className="btn" onClick={handleSignup}>Register</button>

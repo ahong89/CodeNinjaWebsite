@@ -6,15 +6,20 @@
     align-content: center;
 }
 
+#TeacherNavbarIcon {
+    font-size: 2.4vw;
+    margin: 0.4vw 0.6vw 1vw 3vw;
+}
+
 #TeacherNavbarTitle {
     text-align: left;
-    padding-left: 3vw;
 }
 
 #TeacherLogoutButton {
-    margin-left: 72vw;
+    font-size: 1vw;
+    margin-left: 66.5vw;
     margin-top: 0.5vh;
-    width: 4vw;
+    width: 5.5vw;
     height: 2.25vw; 
     overflow: hidden;
     border-radius: 0.5vw;

@@ -1,4 +1,6 @@
 import './TeacherNavbar.css';
+import { FaUserNinja } from "react-icons/fa";
+import { FaChalkboardTeacher } from "react-icons/fa";
 import axios from 'axios';
 
 function TeacherNavbar(props) {
@@ -23,6 +25,7 @@ function TeacherNavbar(props) {
 
     return (
         <div id="TeacherNavbarContainer">
+            <FaChalkboardTeacher id="TeacherNavbarIcon"/>
             <h1 id="TeacherNavbarTitle">Teacher Dashboard</h1>
             <button id="TeacherLogoutButton" onClick={handleLogout}>Logout</button>
         </div>

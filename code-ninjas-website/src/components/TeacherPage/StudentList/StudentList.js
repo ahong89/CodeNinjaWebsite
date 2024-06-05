@@ -1,4 +1,4 @@
-import './StudentList.css';
+ import './StudentList.css';
 import { FaSearch } from "react-icons/fa";
 
 function StudentList(props) {
