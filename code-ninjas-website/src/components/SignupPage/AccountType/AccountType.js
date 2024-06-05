@@ -6,7 +6,7 @@ function StudentPage(props) {
 
   return (
     <div className="AccountType">
-        <div id="MainContainer">
+        <div id="MainAccountTypeContainer">
             <AccountTypeDisplay setAccType={props.setAccType} className="Tab"/>
         </div>
     </div>

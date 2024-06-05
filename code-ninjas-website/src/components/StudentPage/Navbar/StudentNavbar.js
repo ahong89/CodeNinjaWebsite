@@ -24,7 +24,7 @@ function StudentNavbar(props) {
 
     return (
         <div id="StudentNavbarContainer">
-            <FaUserNinja id="Icon"/>
+            <FaUserNinja id="StudentNavbarIcon"/>
             <h1 id="StudentNavbarTitle">Student Dashboard</h1>
             <button id="StudentLogoutButton" onClick={handleLogout}>Logout</button>
         </div>

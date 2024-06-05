@@ -41,17 +41,17 @@ function StudentPage(props) {
   }
 
   return (
-    <div className="App">
+    <div className="StudentPageMain">
         <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
-        <div id="Main">
-            <div className="Tab">
+        <div id="StudentPageMainContainer">
+            <div className="StudentPageTab">
                 <Profile userData={userData}/>
             </div>
-            <div className="Tab">
+            <div className="StudentPageTab">
                 <Tasks userData={userData}/>
             </div>
         </div>
-        <div className="Tab" id="Progress">
+        <div className="StudentPageTab" id="Progress">
           <Progress />
         </div>
     </div>

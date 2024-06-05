@@ -9,7 +9,7 @@ body {
     font-size: 1vw;
 }
 
-#Main {
+#StudentPageMainContainer {
     display: flex;
     flex-direction: horizontal;
     justify-content: space-evenly;
@@ -18,7 +18,7 @@ body {
     margin: 1.33333vw 0px;
 }
 
-.Tab {
+.StudentPageTab {
     overflow: hidden;
     border-radius: 1vw;
     border: 0.5px solid rgba(255, 255, 255, 0.551);

@@ -9,7 +9,7 @@ function Tasks(props) {
         <div id="TasksContainer">
             <div id="TaskTitleContainer">
                 <h1 id="TaskTitle">Tasks</h1>
-                <BsListTask id="TaskIcon"/>
+                <BsListTask id="TaskListIcon"/>
             </div>
             
             <table id="TaskList">
