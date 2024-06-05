@@ -36,7 +36,7 @@ function TeacherPage(props) {
 
   return (
       <div className="TeacherPage">
-        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
+        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated} setIsTeacher={props.setIsTeacher}/>
         <div id="MainContainer">
             <div className="Tab">
                 <StudentList studentData={studentData} setCurrStudent={setCurrStudent}/>

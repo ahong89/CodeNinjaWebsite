@@ -49,14 +49,18 @@ function App() {
               : <>{
                 accType === "student" ?
                 <StudentSignup setToken={setToken} setAuthentication={setIsAuthenticated}/>
-                : <TeacherSignup setToken={setToken} setAuthentication={setIsAuthenticated}/>
+                : <>{
+                  accType === "teacher" ?
+                  <TeacherSignup setToken={setToken} setAuthentication={setIsAuthenticated}/>
+                  : <></>
+                }</>
               }</>
 
           }/>
           <Route path="/dashboard" element={
             <PrivateRoute isAuthenticated={isAuthenticated} isTeacher={isTeacher}
-              teacher={<TeacherPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken}/>}
-              student={<StudentPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken}/>}
+              teacher={<TeacherPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken} setIsTeacher={setIsTeacher}/>}
+              student={<StudentPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken} setIsTeacher={setIsTeacher}/>}
               /> 
           }/>
           <Route path='/' element={isAuthenticated ? 

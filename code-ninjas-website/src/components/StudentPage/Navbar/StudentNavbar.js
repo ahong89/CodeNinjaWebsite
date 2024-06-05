@@ -12,6 +12,7 @@ function StudentNavbar(props) {
         .then((response) => {
             props.removeToken()
             props.setIsAuthenticated(false)
+            props.setIsTeacher(null)
         }).catch((error) => {
             if (error.response) {
                 console.log(error.response)
