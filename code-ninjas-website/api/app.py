@@ -139,8 +139,7 @@ def get_allstudents():
     for student in allStudents:
         del student['_id']
         response.append(student)
-        return response, 200
-    return {"msg": "Error"}, 500
+    return response, 200
 
 @api.route('/setnb', methods=["POST"])
 @jwt_required()
@@ -153,9 +152,10 @@ def set_ninjabucks():
     studentQuery = {"email": request.json.get("email")}
     studentData = userData_database.userData.find_one(studentQuery)
     if studentData:
-        nb = request.json.get("newnb")
+        nb = request.json.get("nb")
         newData = { "$set": { 'nb': nb } }
         userData_database.userData.update_one(studentQuery, newData)
+        print("nb of " + request.json.get("email") + " have been updated to: " + str(nb))
         return {"msg": studentData['email'] + "'s ninja bucks have been updated successfully"}, 200
     
     return {"msg": "Student not found"}, 500

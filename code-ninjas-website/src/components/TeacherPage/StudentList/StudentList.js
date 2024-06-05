@@ -1,7 +1,11 @@
  import './StudentList.css';
 import { FaSearch } from "react-icons/fa";
+import { useState } from 'react';
 
 function StudentList(props) {
+
+    let students = props.studentData
+
     return (
         <div id="StudentListContainer">
             <div id="StudentListTitleContainer">
@@ -20,17 +24,29 @@ function StudentList(props) {
             </div>
             
             <table id="StudentList">
-                <tr className="StudentRow"><Student name="Andrew Hong"/></tr>
+                {/* <tr className="StudentRow"><Student name="Andrew Hong"/></tr>
                 <tr className="StudentRow"><Student name="Nathan Zhang"/></tr>
-                <tr className="StudentRow"><Student name="Harsh Akunuri"/></tr>
+                <tr className="StudentRow"><Student name="Harsh Akunuri"/></tr> */}
+                {students.map((currStudent, studentID) => (
+                    <tr className="StudentRow"><Student
+                        setCurrStudent={props.setCurrStudent}
+                        student={currStudent}
+                    /></tr>
+                ))}
             </table>
         </div>
     )
 }
 
 function Student(props) {
+
+    function handleStudentChange() {
+        props.setCurrStudent(props.student)
+        console.log(props.student)
+    }
+
     return (
-        <button className="Student">{props.name}</button>
+        <button className="Student" onClick={handleStudentChange}>{props.student.name}</button>
     )
 }
 

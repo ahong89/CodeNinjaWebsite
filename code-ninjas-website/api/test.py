@@ -21,6 +21,7 @@ def insert_test_doc():
         "name": "Andrew Hong",
         "join_date": "6/3/2024",
         "nb": 4000,
+        "isTeacher": False,
         "tasks": [
             [
                 "Complete the weekly prompt",
