@@ -42,7 +42,7 @@ function StudentProfile(props) {
                             </tr>
                         </tbody>
                     </table>
-                    <button className="TeacherButton">Edit Tasks</button>
+                    <button className="TeacherButton" id="TaskEditorButton">Edit Tasks</button>
                 </div>
 
                 <div id="StudentPointsMainContainer">
@@ -50,7 +50,18 @@ function StudentProfile(props) {
                     <div id="StudentPointsContainer">
                         <h3 id="StudentPoints">5000 NB</h3>
                     </div>
-                    <button className="TeacherButton">Edit NB</button>
+                    
+                    <div id="StudentPointEditorContainer">
+                        <input
+                        // onChange={handleChange}
+                        type="text" 
+                        // text={loginForm.email}
+                        name="StudentPointEditorInput" 
+                        placeholder="Points"
+                        // value={loginForm.email}
+                        required/>
+                        <button className="TeacherButton" id="StudentPointEditorButton">Edit NB</button>
+                    </div>
                 </div>
             </div>
         </div>
