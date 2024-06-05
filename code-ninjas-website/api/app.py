@@ -103,6 +103,14 @@ def refresh_expiring_jwts(response):
     except (RuntimeError, KeyError):
         return response
 
+@api.route('/getacctype', methods=["GET"])
+@jwt_required()
+def get_acctype():
+    current_user = get_jwt_identity()
+    userData = userData_database.userData.find_one({"email": current_user})
+    response = {'isTeacher': userData['isTeacher']}
+    return response
+
 @api.route('/profile', methods=["GET"])
 @jwt_required()
 def my_profile():
@@ -168,7 +176,7 @@ def set_tasks():
 
     return {"msg": "Student not found"}, 500
 
-hostip = '192.168.86.20'
+hostip = '192.168.0.183'
 port = 50100
 if __name__ == '__main__':
     print("Server running on: "  + hostip + ":" + str(port))

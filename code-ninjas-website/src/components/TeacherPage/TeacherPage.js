@@ -2,7 +2,7 @@ import './TeacherPage.css';
 import { useState } from 'react';
 import StudentList from './StudentList/StudentList.js'
 import StudentProfile from './StudentProfile/StudentProfile.js'
-import Navbar from './Navbar/Navbar.js'
+import Navbar from './TeacherNavbar/TeacherNavbar.js'
 import axios from 'axios';
 
 function TeacherPage(props) {

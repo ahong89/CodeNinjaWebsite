@@ -1,6 +1,6 @@
 import './StudentPage.css';
 import React, { useState } from 'react';
-import Navbar from './Navbar/Navbar.js'
+import Navbar from './Navbar/StudentNavbar.js'
 import Profile from './Profile/Profile.js'
 import Tasks from './Tasks/Tasks.js'
 import Progress from './Progress/Progress.js'
@@ -12,6 +12,7 @@ function StudentPage(props) {
   const [ userData, setUserData ] = useState(() => getData());
 
   function getData() {
+    console.log(props.token)
     axios({
       method: "GET",
       url: "/profile",
