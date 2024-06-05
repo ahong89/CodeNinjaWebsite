@@ -44,6 +44,7 @@
     cursor: pointer;
     border-width: 0.35vw;
     border-color: white;
+    transition: 0.2s;
 }
 
 .IconContainer {

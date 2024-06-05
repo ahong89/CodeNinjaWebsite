@@ -2,15 +2,21 @@ import './AccountTypeDisplay.css';
 import { IoBookSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 function AccountTypeDisplay(props) {
-  
+    const navigate = useNavigate();
+
     function handleStudentAccType() {
         props.setAccType("student")
     }
 
     function handleTeacherAccType() {
         props.setAccType("teacher")
+    }
+
+    function handleGoToLogin() {
+        navigate("/login")
     }
 
     return (
@@ -37,7 +43,7 @@ function AccountTypeDisplay(props) {
                 </div>
             </div>
             <div id="LoginLink">
-                <p>Already have an account? <a>Login</a></p>
+                <p>Already have an account? <a onClick={handleGoToLogin}>Login</a></p>
             </div>
         </div>
       </div>

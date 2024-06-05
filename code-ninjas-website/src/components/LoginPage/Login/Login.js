@@ -88,7 +88,7 @@ function Login(props) {
                 </div>
 
                 <div id="incorrect-details" className={incorrectHidden}>
-                    <p>the login details which you entered are incorrect</p>
+                    <p>Incorrect email or password.</p>
                     <br></br>
                 </div>
 
