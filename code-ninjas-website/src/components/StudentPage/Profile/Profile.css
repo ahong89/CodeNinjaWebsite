@@ -46,6 +46,24 @@
     object-fit: fill; */
 }
 
+#ProfilePicture:hover {
+    animation: rotation 1.5s ease-in-out infinite alternate-reverse
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+        opacity: 100
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        transform: rotate(365deg);
+        opacity: 100
+    }
+}
+
 #Name {
     font-size: 1.5vw;
 }
