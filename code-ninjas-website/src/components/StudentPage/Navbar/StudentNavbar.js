@@ -1,7 +1,8 @@
-import './Navbar.css';
+import './StudentNavbar.css';
+import { FaUserNinja } from "react-icons/fa";
 import axios from 'axios';
 
-function Navbar(props) {
+function StudentNavbar(props) {
 
     function handleLogout() {
         axios({
@@ -9,7 +10,6 @@ function Navbar(props) {
             url: "/logout"
         })
         .then((response) => {
-            console.log("hello")
             props.removeToken()
             props.setIsAuthenticated(false)
         }).catch((error) => {
@@ -23,11 +23,12 @@ function Navbar(props) {
     }
 
     return (
-        <div id="NavbarContainer">
-            <h1 id="NavbarTitle">Teacher Dashboard</h1>
-            <button id="LogoutButton" onClick={handleLogout}>Logout</button>
+        <div id="StudentNavbarContainer">
+            <FaUserNinja id="Icon"/>
+            <h1 id="StudentNavbarTitle">Student Dashboard</h1>
+            <button id="StudentLogoutButton" onClick={handleLogout}>Logout</button>
         </div>
     )
 }
 
-export default Navbar;
+export default StudentNavbar;

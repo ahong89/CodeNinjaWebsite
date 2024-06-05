@@ -32,8 +32,9 @@ function Login(props) {
           })
           .then((response) => {
             props.setToken(response.data.access_token)
+            props.setIsTeacher(response.data.access_token)
             props.setAuthentication(true)
-            navigate('/student')
+            navigate('/dashboard')
           }).catch((error) => {
             setIncorrectHidden("")
             if (error.response) {

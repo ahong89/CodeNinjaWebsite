@@ -1,4 +1,4 @@
-#NavbarContainer {
+#TeacherNavbarContainer {
     display: flex;
     flex-direction: horizontal;
     height: 5.25vw;
@@ -6,21 +6,15 @@
     align-content: center;
 }
 
-#Icon {
-    font-size: 2.1vw;
-    margin: 0.45vw 0.6vw 1vw 3vw;
-}
-
-#NavbarTitle {
+#TeacherNavbarTitle {
     text-align: left;
-    padding-left: 1;
+    padding-left: 3vw;
 }
 
-#LogoutButton {
-    font-size: 1vw;
-    margin-left: 67vw;
+#TeacherLogoutButton {
+    margin-left: 72vw;
     margin-top: 0.5vh;
-    width: 5.5vw;
+    width: 4vw;
     height: 2.25vw; 
     overflow: hidden;
     border-radius: 0.5vw;
@@ -30,8 +24,8 @@
     color: white;
 }
 
-#LogoutButton:hover {
+#TeacherLogoutButton:hover {
     cursor: pointer;
     background-color: rgb(200, 200, 200);
     transition: 0.2s;
-} 
+}
