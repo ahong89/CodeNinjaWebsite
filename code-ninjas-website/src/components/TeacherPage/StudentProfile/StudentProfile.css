@@ -6,12 +6,107 @@
 }
 
 #StudentInfoContainer {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    height: 75vh;
 }
 
 #StudentProfileTitle {
     text-align: left;
     padding: 0.9% 0 0 1.6%;
+}
+
+#StudentTasksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1%;
+    width: 59%;
+    height: 100%;
+    overflow: auto;
+}
+
+#StudentPointsMainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1%;
+    width: 31%;
+    height: 100%;
+    overflow: auto;
+}
+
+#StudentTaskList {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1% auto 0;
+}
+
+#StudentTaskListTitle {
+    /* text-align: center; */
+}
+
+#StudentTaskListHeader{
+    font-size: 1vw;
+    font-style: italic;
+    height: 3vw;
+}
+
+#StudentTaskList .StudentTask {
+    width: 50%;
+    height: 3vw;
+    text-align: left;
+}
+
+#StudentTaskList tr th {
+    border-bottom: 1px rgb(139, 139, 139) solid;
+}
+
+#StudentTaskList .StudentTask:hover {
+    background-color: rgb(200, 200, 200);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#StudentTaskListHeader th {
+    text-align: left;
+}
+
+#StudentPointsTitle {
+    /* text-align: center; */
+}
+
+#StudentPointsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% 0 0;
+    height: 10%;
+    width: 50%;
+    border-radius: 1vw;
+    border: 0.5px solid rgba(255, 255, 255, 0.551);
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
+}
+
+#StudentPoints {
+    text-align: center;
+}
+
+.TeacherButton {
+    width: 8vw;
+    height: 2.25vw; 
+    overflow: hidden;
+    border-radius: 0.5vw;
+    border: 0.5px solid rgba(255, 255, 255, 0.551);
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
+    background-color: rgba(38,40,51,255);
+    margin-top: 2vw;
+    color: white;
+}
+
+.TeacherButton:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+    transition: 0.2s;
 }

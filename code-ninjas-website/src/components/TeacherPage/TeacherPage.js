@@ -34,16 +34,16 @@ function TeacherPage(props) {
 
     return (    
         <div className="TeacherPage">
-        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
-        <div id="MainContainer">
-            <div className="Tab">
-                <StudentList studentData={studentData}/>
-            </div>
-            <div className="Tab">
-                <StudentProfile studentData={studentData}/>
-            </div>
+          <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
+          <div id="MainContainer">
+              <div className="Tab">
+                  <StudentList studentData={studentData}/>
+              </div>
+              <div className="Tab">
+                  <StudentProfile studentData={studentData}/>
+              </div>
+          </div>
         </div>
-    </div>
     )
 }
 
