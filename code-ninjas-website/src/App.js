@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login setIsTeacher={getAccType} setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
+          <Route path="/login" element={<Login setAccType={setAccType} setIsTeacher={getAccType} setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
           <Route path="/signup" element={
             accType === null ? 
               <AccountType setAccType={setAccType}/>
