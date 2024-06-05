@@ -21,13 +21,13 @@ function App() {
           <Route path="/login" element={<Login setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
           <Route path="/account-type" element={<AccountType />}/>
           <Route path="/signup" element={<Signup setToken={setToken} setAuthentication={setIsAuthenticated}/>}/>
-          <Route path="/student" element={
+          <Route path="/student" element={<StudentPage />}/>
+          <Route path="/dashboard" element={
             <PrivateRoute isAuthenticated={isAuthenticated} isTeacher={isTeacher}
               teacher={<TeacherPage />}
               student={<StudentPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken}/>}
               /> 
           }/>
-          <Route path="/teacher" element={<TeacherPage/>}/>
           <Route path='/' element={isAuthenticated ? 
               <Navigate to='/student' replace />
             : <Navigate to='/login' replace />} />

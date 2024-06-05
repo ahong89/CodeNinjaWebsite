@@ -1,5 +1,5 @@
 #StudentListContainer {
-    width: 28vw;
+    width: 32vw;
     height: 100%;
 }
 
@@ -12,16 +12,45 @@
     margin: 2% 60% 0 4%;
 }
 
+#StudentListTitleContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.StudentSearchInput {
+    margin: 0.9vw 0 0 6.5vw;
+}
+
+.StudentSearchInput input {
+    overflow: auto;
+    width: 100%;
+    height: 80%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 0.15vw solid rgba(255, 255, 255, .2);
+    border-radius: 4vw;
+    font-size: 0.8vw;
+    color: white;
+    padding-left: 5%;
+}
+
 .Student{
     overflow: hidden;
     border-radius: 1vw;
     border: 0.5px solid rgba(255, 255, 255, 0.551);
     box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
     background-color: rgba(255, 255, 255, 0);
-    width: 24vw;
+    width: 28vw;
     height: 5vh;
     margin: 1vh;
     color: white;
     text-align: center;
     font-size: 1vw;
+}
+
+.Student:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+    transition: 0.2s;
 }

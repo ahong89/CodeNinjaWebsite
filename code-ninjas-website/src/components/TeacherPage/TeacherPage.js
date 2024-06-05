@@ -33,9 +33,9 @@ function TeacherPage(props) {
       }
 
     return (    
-        <div className="App">
+        <div className="TeacherPage">
         <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
-        <div id="Main">
+        <div id="MainContainer">
             <div className="Tab">
                 <StudentList studentData={studentData}/>
             </div>
