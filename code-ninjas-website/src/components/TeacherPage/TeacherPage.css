@@ -25,4 +25,14 @@
     height: 78vh;
     overflow: hidden;
     margin: 1.33333vw 0px;
+    animation: fade 1.5s ease-in-out
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

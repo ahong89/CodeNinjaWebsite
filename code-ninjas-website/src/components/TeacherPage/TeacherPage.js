@@ -34,18 +34,17 @@ function TeacherPage(props) {
       return ([]);
     }
 
-  return (    
+  return (
       <div className="TeacherPage">
-        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
+        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated} setIsTeacher={props.setIsTeacher}/>
         <div id="TeacherMainContainer">
             <div className="Tab">
                 <StudentList studentData={studentData} setCurrStudent={setCurrStudent}/>
             </div>
             <div className="Tab">
-                <StudentProfile token={props.token} studentData={studentData} setCurrStudent={setCurrStudent} currStudent={currStudent}/>
+                <StudentProfile token={props.token} studentData={studentData} updateData={getData} setCurrStudent={setCurrStudent} currStudent={currStudent}/>
             </div>
         </div>
-        <button onClick={() => console.log(currStudent)}>Click me</button>
       </div>
   )
 }

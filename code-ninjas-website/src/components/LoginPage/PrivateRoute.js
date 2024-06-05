@@ -6,9 +6,12 @@ function PrivateRoute(props) {
     return (
         props.isAuthenticated ? 
         <>
-            {props.isTeacher ?
+            {props.isTeacher===true?
                 <div>{props.teacher}</div>
-                : <div>{props.student}</div>
+                : <>{props.isTeacher===false?
+                    <div>{props.student}</div>
+                    : <></>
+                }</>
             }
         </>
         : <Navigate to="/login"/>

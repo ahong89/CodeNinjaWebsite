@@ -42,7 +42,7 @@ function StudentPage(props) {
 
   return (
     <div className="StudentPageMain">
-        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
+        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated} setIsTeacher={props.setIsTeacher}/>
         <div id="StudentPageMainContainer">
             <div className="StudentPageTab">
                 <Profile userData={userData}/>

@@ -12,7 +12,7 @@ function StudentProfile(props) {
         <div id="StudentProfileContainer">
             {props.currStudent === null ?
                 <NoStudentSelected />
-                : <StudentInfo token={props.token} currStudent={props.currStudent} setCurrStudent={props.setCurrStudent}/>
+                : <StudentInfo token={props.token} currStudent={props.currStudent} setCurrStudent={props.setCurrStudent} updateData={props.updateData}/>
             }
         </div>
     )
@@ -47,12 +47,12 @@ function StudentInfo(props) {
             }
           })
           .then((response) => {
-            let newStudentData = props.currStudent
-            newStudentData.nb = newnb
-            console.log(newStudentData)
-            props.setCurrStudent(newStudentData)
-            const res = response.data
-            return res
+            props.updateData()
+            props.setCurrStudent(prevState => ({
+                ...prevState,
+                nb : newnb
+            }))
+            return response.data
           }).catch((error) => {
             if (error.response) {
               console.log(error.response)
