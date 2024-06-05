@@ -1,7 +1,8 @@
 import './App.css';
 import StudentPage from './components/StudentPage/StudentPage.js'
 import Login from './components/LoginPage/Login/Login.js'
-import Signup from './components/SignupPage/Signup/Signup.js'
+import StudentSignup from './components/SignupPage/StudentSignup/StudentSignup.js'
+import TeacherSignup from './components/SignupPage/TeacherSignup/TeacherSignup.js'
 import AccountType from './components/SignupPage/AccountType/AccountType.js'
 import PrivateRoute from './components/LoginPage/PrivateRoute.js'
 import TeacherPage from './components/TeacherPage/TeacherPage.js'
@@ -14,6 +15,7 @@ function App() {
   const { token, removeToken, setToken } = useToken();
   const [ isAuthenticated, setIsAuthenticated ] = useState(token !== null);
   const [ isTeacher, setIsTeacher ] = useState(token && getAccType(token))
+  const [ accType, setAccType ] = useState(null);
 
   function getAccType(token) {
     axios({
@@ -41,8 +43,16 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login setIsTeacher={getAccType} setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
-          <Route path="/account-type" element={<AccountType />}/>
-          <Route path="/signup" element={<Signup setToken={setToken} setAuthentication={setIsAuthenticated}/>}/>
+          <Route path="/signup" element={
+            accType === null ? 
+              <AccountType setAccType={setAccType}/>
+              : <>{
+                accType === "student" ?
+                <StudentSignup setToken={setToken} setAuthentication={setIsAuthenticated}/>
+                : <TeacherSignup setToken={setToken} setAuthentication={setIsAuthenticated}/>
+              }</>
+
+          }/>
           <Route path="/dashboard" element={
             <PrivateRoute isAuthenticated={isAuthenticated} isTeacher={isTeacher}
               teacher={<TeacherPage token={token} setIsAuthenticated={setIsAuthenticated} removeToken={removeToken}/>}

@@ -12,7 +12,8 @@ function TeacherSignup(props) {
     const [signupForm, setSignupForm] = useState({
         name: "",
         email: "",
-        password: ""
+        password: "",
+        code: ""
     })
 
     function handleChange(event) { 
@@ -23,49 +24,56 @@ function TeacherSignup(props) {
     }
 
     function handleSignup(event) {
-        axios({
-            method: "POST",
-            url:"/signup",
-            data:{
-                name: signupForm.name,
+      if(signupForm.code !== "6960") {
+        console.log("Incorrect passcode")
+        navigate('/signup');
+        event.preventDefault(); 
+        return;
+      }
+      axios({
+          method: "POST",
+          url:"/signup",
+          data:{
+              name: signupForm.name,
+              email: signupForm.email,
+              password: signupForm.password,
+              isTeacher: true
+          }
+        })
+        .then((response) => {
+          axios({
+              method: "POST",
+              url:"/token",
+              data:{
                 email: signupForm.email,
                 password: signupForm.password
-            }
-          })
-          .then((response) => {
-            axios({
-                method: "POST",
-                url:"/token",
-                data:{
-                  email: signupForm.email,
-                  password: signupForm.password
-                }
-              })
-              .then((response) => {
-                props.setToken(response.data.access_token)
-                props.setAuthentication(true)
-                navigate('/student')
-              }).catch((error) => {
-                if (error.response) {
-                  console.log(error.response)
-                  console.log(error.response.status)
-                  console.log(error.response.headers)
-                  console.log(props.isAuthenticated)
-                }
-                navigate('/login')
               }
-            )
-          }).catch((error) => {
-            if (error.response) {
-              console.log(error.response)
-              console.log(error.response.status)
-              console.log(error.response.headers)
-              console.log(props.isAuthenticated)
+            })
+            .then((response) => {
+              props.setToken(response.data.access_token)
+              props.setAuthentication(true)
+              navigate('/dashboard')
+            }).catch((error) => {
+              if (error.response) {
+                console.log(error.response)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+                console.log(props.isAuthenticated)
+              }
+              navigate('/login')
             }
+          )
+        }).catch((error) => {
+          if (error.response) {
+            console.log(error.response)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+            console.log(props.isAuthenticated)
           }
-        )
+        }
+      )
 
-        event.preventDefault()
+      event.preventDefault()
     }
 
     return (
@@ -109,14 +117,14 @@ function TeacherSignup(props) {
                     </div>
                     <div className="input-box">
                     <input 
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             type="password" 
-                            // text={signupForm.password}
+                            text={signupForm.code}
                             name="code" 
                             placeholder="Teacher Code"
-                            // value={signupForm.password}
+                            value={signupForm.code}
                         required/>
-                        <IoBookSharp className="icon" />
+                        {/* <IoBookSharp className="icon" /> */}
                     </div>
 
                     <button type="submit" className="btn" onClick={handleSignup}>Register</button>

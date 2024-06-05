@@ -29,7 +29,8 @@ function StudentSignup(props) {
             data:{
                 name: signupForm.name,
                 email: signupForm.email,
-                password: signupForm.password
+                password: signupForm.password,
+                isTeacher: false
             }
           })
           .then((response) => {
@@ -44,7 +45,7 @@ function StudentSignup(props) {
               .then((response) => {
                 props.setToken(response.data.access_token)
                 props.setAuthentication(true)
-                navigate('/student')
+                navigate('/dashboard')
               }).catch((error) => {
                 if (error.response) {
                   console.log(error.response)

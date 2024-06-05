@@ -5,12 +5,20 @@ import React, { useState } from 'react';
 
 function AccountTypeDisplay(props) {
   
+    function handleStudentAccType() {
+        props.setAccType("student")
+    }
+
+    function handleTeacherAccType() {
+        props.setAccType("teacher")
+    }
+
     return (
       <div id="MainAccountTypeContainer">
         <div id="AccountTypeDisplayContainer">
             <h1 id="AccountTypeTitle">Choose your account type</h1>
             <div id="AccountTypeContainer">
-                <div className="AccountTypeTab" id="StudentAccountType">
+                <div className="AccountTypeTab" id="StudentAccountType" onClick={handleStudentAccType}>
                     <div className="IconContainer" id="StudentIconContainer">
                         <FaUser id="StudentIcon"/>
                     </div>
@@ -19,7 +27,7 @@ function AccountTypeDisplay(props) {
                     </div>
                 </div>
 
-                <div className="AccountTypeTab" id="TeacherAccountType">
+                <div className="AccountTypeTab" id="TeacherAccountType" onClick={handleTeacherAccType}>
                     <div className="IconContainer" id="TeacherIconContainer">
                         <IoBookSharp id="TeacherIcon"/>
                     </div>
