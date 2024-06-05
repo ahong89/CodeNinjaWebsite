@@ -37,7 +37,7 @@ function TeacherPage(props) {
   return (    
       <div className="TeacherPage">
         <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated}/>
-        <div id="MainContainer">
+        <div id="TeacherMainContainer">
             <div className="Tab">
                 <StudentList studentData={studentData} setCurrStudent={setCurrStudent}/>
             </div>
@@ -45,7 +45,7 @@ function TeacherPage(props) {
                 <StudentProfile token={props.token} studentData={studentData} setCurrStudent={setCurrStudent} currStudent={currStudent}/>
             </div>
         </div>
-        <button onClick={() => console.logx(currStudent)}>Click me</button>
+        <button onClick={() => console.log(currStudent)}>Click me</button>
       </div>
   )
 }

@@ -1,4 +1,9 @@
 import './StudentProfile.css';
+import { FaHotTubPerson } from "react-icons/fa6";
+import { FaPersonFalling } from "react-icons/fa6";
+import { FaBlind } from "react-icons/fa";
+import { MdBlind } from "react-icons/md";
+import { LiaBlindSolid } from "react-icons/lia";
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -15,9 +20,12 @@ function StudentProfile(props) {
 
 function NoStudentSelected(props) {
     return (
-        <div>
+        <div id="StudentProfileContainer">
             <h1 id="StudentProfileTitle">Student Profile</h1>
-            <h1>No student is currently selected</h1>
+            <div id="StudentInfoFillerContainer">
+                <MdBlind id="StudentInfoFillerIcon" />
+                <h1 id="StudentInfoFillerText">No student is selected</h1>
+            </div>
         </div>
     )
 }

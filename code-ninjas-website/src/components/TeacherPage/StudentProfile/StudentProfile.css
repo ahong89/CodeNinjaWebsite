@@ -138,3 +138,20 @@
     color: white;
     padding-left: 5%;
 }
+
+#StudentInfoFillerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+#StudentInfoFillerIcon {
+    font-size: 6.5vw;
+    margin-bottom: 1vw;
+}
+
+#StudentInfoFillerText {
+    font-size: 2.6vw;
+}
