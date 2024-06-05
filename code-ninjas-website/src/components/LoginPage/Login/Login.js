@@ -50,6 +50,7 @@ function Login(props) {
     }
 
     function directToSignup(event) {
+        props.setAccType(null)
         navigate("/signup")
     }
 

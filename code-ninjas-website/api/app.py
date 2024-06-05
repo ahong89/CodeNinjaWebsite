@@ -176,7 +176,7 @@ def set_tasks():
 
     return {"msg": "Student not found"}, 500
 
-hostip = '192.168.0.183'
+hostip = '192.168.86.20'
 port = 50100
 if __name__ == '__main__':
     print("Server running on: "  + hostip + ":" + str(port))
