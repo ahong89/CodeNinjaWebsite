@@ -25,9 +25,11 @@
     justify-content: space-evenly;
     margin-top: 1vw;
     height: 100%;
+    overflow: hidden;
 }
 
 #StudentNotesInputContainer {
+    margin-top: 0.8vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,6 +51,7 @@
     height: 100%;
     overflow: hidden;
     width: 48%;
+    margin-top: 0.8vw;
 }
 
 #StudentProfileContainer {
