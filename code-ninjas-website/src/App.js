@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/login" element={<Login setAccType={setSignupAccType} setToken={setToken} setAuthentication={setIsAuthenticated} isAuthenticated={isAuthenticated}/>} />
           <Route path="/signup" element={<Signup setIsAuthenticated={setIsAuthenticated} token={token} setSignupAccType={setSignupAccType} signupAccType={signupAccType}/>}/>
