@@ -25,7 +25,7 @@ function StudentSignup(props) {
     function handleSignup(event) {
         axios({
             method: "POST",
-            url:"/signup",
+            url:"https://codeninjawebsite.onrender.com/signup",
             data:{
                 name: signupForm.name,
                 email: signupForm.email,
@@ -36,7 +36,7 @@ function StudentSignup(props) {
           .then((response) => {
             axios({
                 method: "POST",
-                url:"/token",
+                url:"https://codeninjawebsite.onrender.com/token",
                 data:{
                   email: signupForm.email,
                   password: signupForm.password

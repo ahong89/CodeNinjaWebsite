@@ -5,6 +5,7 @@ import os
 from pymongo import MongoClient
 from dotenv import load_dotenv, find_dotenv
 from waitress import serve
+from flask_cors import CORS
 
 # flask
 api = Flask(__name__)
@@ -12,6 +13,7 @@ api = Flask(__name__)
 api.config["JWT_SECRET_KEY"] = "xwmq1cf4xqkjmv4tcnh8hepa822n8yog"
 api.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 jwt = JWTManager(api)
+CORS(api)
 
 # db
 load_dotenv(find_dotenv())

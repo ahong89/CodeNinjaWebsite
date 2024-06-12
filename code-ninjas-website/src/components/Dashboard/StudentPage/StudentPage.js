@@ -15,7 +15,7 @@ function StudentPage(props) {
     console.log(props.token)
     axios({
       method: "GET",
-      url: "/profile",
+      url: "https://codeninjawebsite.onrender.com/profile",
       headers: {
         Authorization: 'Bearer ' + props.token
       }

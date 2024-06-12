@@ -13,7 +13,7 @@ function TeacherPage(props) {
   function getData() {
       axios({
         method: "GET",
-        url: "/getallstudents",
+        url: "https://codeninjawebsite.onrender.com/getallstudents",
         headers: {
           Authorization: 'Bearer ' + props.token
         }
