@@ -1,6 +1,11 @@
 * {
     font-family: "Poppins", san-serif;
     font-weight: lighter;
+    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
 
 .TeacherPageTab {
@@ -9,21 +14,23 @@
     border: 0.5px solid rgba(255, 255, 255, 0.551);
     box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
     max-width: 97.5vw;
-    height: 78vh;
+    height: 130vh;
     /* background: transparent; */
     /* backdrop-filter: blur(10px); */
 }
 
 .TeacherPage {
-    height: 90vh;
+    height: 150vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 #TeacherMainContainer {
+    overflow: hidden;
     display: flex;
     flex-direction: horizontal;
     justify-content: space-evenly;
-    height: 78vh;
-    overflow: hidden;
+    height: 130vh;
     margin: 1.33333vw 0px;
     animation: fade 1.5s ease-in-out
 }
