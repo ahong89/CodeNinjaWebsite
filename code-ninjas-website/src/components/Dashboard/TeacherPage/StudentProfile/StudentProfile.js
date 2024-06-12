@@ -1,5 +1,6 @@
 import './StudentProfile.css';
 import StudentProfileNotes from './StudentProfileNotes/StudentProfileNotes.js';
+import StudentInformationInput from './StudentProfileNotes/StudentInformationInput/StudentInformationInput.js'
 import { FaHotTubPerson } from "react-icons/fa6";
 import { FaPersonFalling } from "react-icons/fa6";
 import { FaBlind } from "react-icons/fa";
@@ -32,13 +33,15 @@ function NoStudentSelected(props) {
 }
 
 function StudentInfo(props) {
-    const [incrementNB, setIncrementNB] = useState(0)
+    const [ incrementNB, setIncrementNB ] = useState(0)
+    const [ editMode, setEditMode ] = useState(false)
+    const [ notes, setNotes ] = useState(props.currStudent.notes)
 
     function handleNBIncrement(event) {
         let newnb = Number(incrementNB) + Number(props.currStudent.nb)
         axios({
             method: "POST",
-            url: "/setnb",
+            url: "https://codeninjawebsite.onrender.com/setnb",
             headers: {
                 Authorization: 'Bearer ' + props.token
             },
@@ -47,13 +50,38 @@ function StudentInfo(props) {
                 nb: newnb
             }
         })
+        .then((response) => {
+            props.updateData()
+            props.setCurrStudent(prevState => ({
+                ...prevState,
+                nb: newnb
+            }))
+            return response.data
+        }).catch((error) => {
+            if (error.response) {
+                console.log(error.response)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+            }
+        })
+    }
+
+    function handleEditStudentInformation() {
+        if(editMode) {
+            axios({
+                method: "POST",
+                url: "https://codeninjawebsite.onrender.com/setnotes",
+                headers: {
+                    Authorization: 'Bearer ' + props.token
+                },
+                data: {
+                    email: props.currStudent.email, 
+                    notes: notes
+                }
+            })
             .then((response) => {
-                props.updateData()
-                props.setCurrStudent(prevState => ({
-                    ...prevState,
-                    nb: newnb
-                }))
-                return response.data
+                setEditMode(!editMode)
+                return true
             }).catch((error) => {
                 if (error.response) {
                     console.log(error.response)
@@ -61,6 +89,17 @@ function StudentInfo(props) {
                     console.log(error.response.headers)
                 }
             })
+        }
+        setEditMode(!editMode)
+        return false
+    }
+
+    function changeNoteValue(attribute, newValue) {
+        let notesCopy = {...notes}
+        notesCopy[attribute] = newValue
+        setNotes(notes => ({
+            ...notesCopy
+        }))
     }
 
     return (
@@ -73,61 +112,23 @@ function StudentInfo(props) {
                         <div id="StudentNotesInputContainer">
                             <div id="StudentInformationContainer">
                                 <div>
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Rank</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="Black Belt" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Age</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="18" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Membership</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="Standard" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Sensei</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="Sensei Kim" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Platform</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="Unity" required />
-                                    </div>
+                                    <StudentInformationInput title={"Rank"} attribute={"rank"} readOnly={!editMode} data={notes.rank} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Age"} attribute={"age"} readOnly={!editMode} data={notes.age} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Membership"} attribute={"membership"} readOnly={!editMode} data={notes.membership} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Sensei"} attribute={"sensei"} readOnly={!editMode} data={notes.sensei} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Platform"} attribute={"platform"} readOnly={!editMode} data={notes.platform} setData={changeNoteValue}/>
                                 </div>
 
                                 <div>
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Date of birth</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="03/22/2010" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Last contacted</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="06/05/2024" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Last advanced</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="06/02/2024" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Progress</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="Steady" required />
-                                    </div>
-
-                                    <div className="StudentNotesInput">
-                                        <h3 className="StudentNotesInputTitle">Status</h3>
-                                        <input className="StudentNotesInputBox" type="text" placeholder="Doing great" required />
-                                    </div>
+                                    <StudentInformationInput title={"Date of birth"} attribute={"dateofbirth"} readOnly={!editMode} data={notes.dateofbirth} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Last contacted"} attribute={"lastcontacted"} readOnly={!editMode} data={notes.lastcontacted} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Last advanced"} attribute={"lastadvanced"} readOnly={!editMode} data={notes.lastadvanced} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Progress"} attribute={"progress"} readOnly={!editMode} data={notes.progress} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Status"} attribute={"status"} readOnly={!editMode} data={notes.status} setData={changeNoteValue}/>
                                 </div>
                             </div>
 
-                            <button className="TeacherButton" id="EditInfoButton">Edit</button>
+                            <button className="TeacherButton" id="EditInfoButton" onClick={handleEditStudentInformation}>{editMode ? "Submit" : "Edit"}</button>
                         </div>
 
                         <div id="StudentTextNotesContainer">

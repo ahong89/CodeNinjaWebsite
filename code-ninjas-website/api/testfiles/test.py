@@ -17,10 +17,10 @@ collections = userData_database.list_collection_names()
 def insert_test_doc():
     collection = userData_database.userData
     test_document = {
-        "email": "honga010807@gmail.com",
-        "name": "Andrew Hong",
+        "email": "joe@gmail.com",
+        "name": "Joe Jawn",
         "join_date": "6/3/2024",
-        "nb": 4000,
+        "nb": 3,
         "isTeacher": False,
         "tasks": [
             [
@@ -33,7 +33,23 @@ def insert_test_doc():
                 "6/2/2024",
                 "in progress"
             ]
-        ]
+        ],
+        "notes": {
+            "rank": "black belt",
+            "age": 18,
+            "membership": "idk",
+            "sensei": "Sensei Nathan",
+            "platform": "Unity",
+            "dateofbirth": "7/5/2009",
+            "lastcontacted": "5 days ago",
+            "lastadvanced": "8 days ago",
+            "progress": "not good",
+            "status": "bad",
+            "entries": [
+                ["1/2/3", "abc"],
+                ["3/4/5", "alr lemme lock in"]
+            ]
+        }
     }
     inserted_id =  collection.insert_one(test_document).inserted_id
     print(inserted_id)
