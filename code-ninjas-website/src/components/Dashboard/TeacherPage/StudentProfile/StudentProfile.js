@@ -12,7 +12,7 @@ import axios from 'axios';
 function StudentProfile(props) {
     return (
         <div id="StudentProfileContainer">
-            {props.currStudent === null ?
+            {props.currStudent.name === null ?
                 <NoStudentSelected />
                 : <StudentInfo token={props.token} currStudent={props.currStudent} setCurrStudent={props.setCurrStudent} updateData={props.updateData} />
             }
@@ -35,7 +35,6 @@ function NoStudentSelected(props) {
 function StudentInfo(props) {
     const [ incrementNB, setIncrementNB ] = useState(0)
     const [ editMode, setEditMode ] = useState(false)
-    const [ notes, setNotes ] = useState(props.currStudent.notes)
 
     function handleNBIncrement(event) {
         let newnb = Number(incrementNB) + Number(props.currStudent.nb)
@@ -76,10 +75,11 @@ function StudentInfo(props) {
                 },
                 data: {
                     email: props.currStudent.email, 
-                    notes: notes
+                    notes: props.currStudent.notes
                 }
             })
             .then((response) => {
+                props.updateData()
                 setEditMode(!editMode)
                 return true
             }).catch((error) => {
@@ -95,10 +95,11 @@ function StudentInfo(props) {
     }
 
     function changeNoteValue(attribute, newValue) {
-        let notesCopy = {...notes}
+        let notesCopy = {...props.currStudent.notes}
         notesCopy[attribute] = newValue
-        setNotes(notes => ({
-            ...notesCopy
+        props.setCurrStudent(currStudent => ({
+            ...currStudent,
+            notes: notesCopy
         }))
     }
 
@@ -112,19 +113,19 @@ function StudentInfo(props) {
                         <div id="StudentNotesInputContainer">
                             <div id="StudentInformationContainer">
                                 <div>
-                                    <StudentInformationInput title={"Rank"} attribute={"rank"} readOnly={!editMode} data={notes.rank} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Age"} attribute={"age"} readOnly={!editMode} data={notes.age} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Membership"} attribute={"membership"} readOnly={!editMode} data={notes.membership} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Sensei"} attribute={"sensei"} readOnly={!editMode} data={notes.sensei} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Platform"} attribute={"platform"} readOnly={!editMode} data={notes.platform} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Rank"} attribute={"rank"} readOnly={!editMode} data={props.currStudent.notes.rank} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Age"} attribute={"age"} readOnly={!editMode} data={props.currStudent.notes.age} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Membership"} attribute={"membership"} readOnly={!editMode} data={props.currStudent.notes.membership} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Sensei"} attribute={"sensei"} readOnly={!editMode} data={props.currStudent.notes.sensei} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Platform"} attribute={"platform"} readOnly={!editMode} data={props.currStudent.notes.platform} setData={changeNoteValue}/>
                                 </div>
 
                                 <div>
-                                    <StudentInformationInput title={"Date of birth"} attribute={"dateofbirth"} readOnly={!editMode} data={notes.dateofbirth} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Last contacted"} attribute={"lastcontacted"} readOnly={!editMode} data={notes.lastcontacted} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Last advanced"} attribute={"lastadvanced"} readOnly={!editMode} data={notes.lastadvanced} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Progress"} attribute={"progress"} readOnly={!editMode} data={notes.progress} setData={changeNoteValue}/>
-                                    <StudentInformationInput title={"Status"} attribute={"status"} readOnly={!editMode} data={notes.status} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Date of birth"} attribute={"dateofbirth"} readOnly={!editMode} data={props.currStudent.notes.dateofbirth} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Last contacted"} attribute={"lastcontacted"} readOnly={!editMode} data={props.currStudent.notes.lastcontacted} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Last advanced"} attribute={"lastadvanced"} readOnly={!editMode} data={props.currStudent.notes.lastadvanced} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Progress"} attribute={"progress"} readOnly={!editMode} data={props.currStudent.notes.progress} setData={changeNoteValue}/>
+                                    <StudentInformationInput title={"Status"} attribute={"status"} readOnly={!editMode} data={props.currStudent.notes.status} setData={changeNoteValue}/>
                                 </div>
                             </div>
 
