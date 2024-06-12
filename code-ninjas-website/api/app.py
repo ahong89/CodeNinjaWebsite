@@ -30,7 +30,8 @@ import teacher_routes
 import student_routes
 
 # hostip = '192.168.86.20'
-hostip = '192.168.0.183'
+# hostip = '192.168.0.183'
+hostip = '192.168.86.45'
 port = 50100
 if __name__ == '__main__':
     print("Server running on: "  + hostip + ":" + str(port))
