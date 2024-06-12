@@ -1,10 +1,8 @@
 from __main__ import api, userLogin_database, userData_database
 import json
-from flask import Flask, request, jsonify
+from flask import request, jsonify
 from datetime import datetime, timedelta, timezone
 from flask_jwt_extended import create_access_token, get_jwt, get_jwt_identity, unset_jwt_cookies, jwt_required, JWTManager
-import os
-from pymongo import MongoClient
 from passlib.hash import pbkdf2_sha256
 
 # sign up
@@ -12,7 +10,7 @@ from passlib.hash import pbkdf2_sha256
 def signup():
     user = {
         "email": request.json.get("email"),
-        "password": pbkdf2_sha256.encrypt(request.json.get("password"))
+        "password": pbkdf2_sha256.hash(request.json.get("password"))
     }
 
     userData = {}
