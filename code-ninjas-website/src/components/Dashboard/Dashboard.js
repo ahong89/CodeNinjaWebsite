@@ -11,7 +11,7 @@ function Dashboard(props) {
     function getAccType(token) {
         axios({
           method: "GET",
-          url: "/getacctype",
+          url: "https://codeninjawebsite.onrender.com/getacctype",
           headers: {
             Authorization: 'Bearer ' + token
           }

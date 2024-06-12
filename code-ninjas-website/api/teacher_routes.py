@@ -1,4 +1,4 @@
-from __main__ import api, userData_database
+from app import api, userData_database
 from flask_jwt_extended import create_access_token, get_jwt, get_jwt_identity, unset_jwt_cookies, jwt_required, JWTManager
 from flask import request
 

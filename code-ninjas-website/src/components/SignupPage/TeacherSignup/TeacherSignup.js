@@ -33,7 +33,7 @@ function TeacherSignup(props) {
       }
       axios({
           method: "POST",
-          url:"/signup",
+          url:"https://codeninjawebsite.onrender.com/signup",
           data:{
               name: signupForm.name,
               email: signupForm.email,
@@ -44,7 +44,7 @@ function TeacherSignup(props) {
         .then((response) => {
           axios({
               method: "POST",
-              url:"/token",
+              url:"https://codeninjawebsite.onrender.com/token",
               data:{
                 email: signupForm.email,
                 password: signupForm.password
