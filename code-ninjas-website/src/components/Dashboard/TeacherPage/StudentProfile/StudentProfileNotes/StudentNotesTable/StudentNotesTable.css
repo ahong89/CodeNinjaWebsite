@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     overflow: auto;
 }
 
@@ -28,6 +29,10 @@
     border-bottom: 1px rgb(139, 139, 139) solid;
 }
 
+.StudentNote {
+    border-bottom: 1px rgb(139, 139, 139) solid;
+}
+
 #StudentNotesTable .StudentNote:hover {
     background-color: rgb(200, 200, 200);
     transition: 0.2s;
@@ -39,14 +44,14 @@
 }
 
 .StudentNotesDate {
-    width: 10%;
+    width: 20%;
 }
 
 .StudentNotesInfo {
-    width: 80%;
+    width: 65%;
 }
 
 .StudentNotesAction {
-    width: 10%;
+    width: 15%;
 }
 

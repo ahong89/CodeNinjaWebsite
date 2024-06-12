@@ -67,66 +67,72 @@ function StudentInfo(props) {
         <div id="StudentProfileMainContainer">
             <h1 id="StudentProfileTitle">Student Profile: {props.currStudent.name}</h1>
             <div id="StudentDataContainer">
-                <div id="StudentNotesContainer">
-                    <div id="StudentNotesInputContainer">
-                        <div>
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Rank</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="Black Belt" required />
+                <div id="StudentNotesMainContainer">
+                    <h2 id="StudentDataTitle">Information</h2>
+                    <div id="StudentNotesContainer">
+                        <div id="StudentNotesInputContainer">
+                            <div id="StudentInformationContainer">
+                                <div>
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Rank</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="Black Belt" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Age</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="18" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Membership</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="Standard" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Sensei</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="Sensei Kim" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Platform</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="Unity" required />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Date of birth</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="03/22/2010" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Last contacted</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="06/05/2024" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Last advanced</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="06/02/2024" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Progress</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="Steady" required />
+                                    </div>
+
+                                    <div className="StudentNotesInput">
+                                        <h3 className="StudentNotesInputTitle">Status</h3>
+                                        <input className="StudentNotesInputBox" type="text" placeholder="Doing great" required />
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Age</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="18" required />
-                            </div>
-
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Membership</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="Standard" required />
-                            </div>
-
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Sensei</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="Sensei Kim" required />
-                            </div>
-
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Platform</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="Unity" required />
-                            </div>
+                            <button className="TeacherButton" id="EditInfoButton">Edit</button>
                         </div>
 
-                        <div>
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Date of birth</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="03/22/2010" required />
-                            </div>
-
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Last contacted</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="06/05/2024" required />
-                            </div>
-
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Last advanced</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="06/02/2024" required />
-                            </div>
-
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Progress</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="Steady" required />
-                            </div>
-
-                            <div className="StudentNotesInput">
-                                <h3 className="StudentNotesInputTitle">Status</h3>
-                                <input className="StudentNotesInputBox" type="text" placeholder="Doing great" required />
-                            </div>
+                        <div id="StudentTextNotesContainer">
+                            <StudentProfileNotes />
                         </div>
-
-                    </div>
-
-                    <div id="StudentTextNotesContainer">
-                        <StudentProfileNotes />
                     </div>
                 </div>
 
@@ -136,7 +142,7 @@ function StudentInfo(props) {
                         <table id="StudentTaskList">
                             <thead>
                                 <tr id="StudentTaskListHeader">
-                                    <th  id="StudentTaskName">TASK NAME</th>
+                                    <th id="StudentTaskName">TASK NAME</th>
                                     <th id="StudentTaskDueDate">DUE DATE</th>
                                     <th id="StudentTaskCompletion">COMPLETION</th>
                                 </tr>

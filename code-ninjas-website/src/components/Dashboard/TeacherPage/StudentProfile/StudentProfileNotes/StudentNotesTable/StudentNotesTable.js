@@ -8,9 +8,9 @@ function StudentNotesTable(props) {
             <table id="StudentNotesTable">
                 <thead>
                     <tr id="StudentNotesTableHeader">
-                        <th className="StudentNotesDate">Date</th>
-                        <th className="StudentNotesInfo">Notes</th>
-                        <th className="StudentNotesAction">Actions</th>
+                        <th className="StudentNotesDate">DATE</th>
+                        <th className="StudentNotesInfo">NOTES</th>
+                        <th className="StudentNotesAction">ACTIONS</th>
                     </tr>
                 </thead>
 
@@ -39,25 +39,25 @@ function StudentNotesTable(props) {
                     <tr className="StudentNote">
                         <td className="StudentNotesDate">06/13/2024</td>
                         <td className="StudentNotesInfo">blah blah blah</td>
-                        <td></td>
+                        <td className="StudentNotesAction"></td>
                     </tr>
 
                     <tr className="StudentNote">
                         <td className="StudentNotesDate">06/13/2024</td>
                         <td className="StudentNotesInfo">blah blah blah</td>
-                        <td></td>
+                        <td className="StudentNotesAction"></td>
                     </tr>
 
                     <tr className="StudentNote">
                         <td className="StudentNotesDate">06/13/2024</td>
                         <td className="StudentNotesInfo">blah blah blah</td>
-                        <td></td>
+                        <td className="StudentNotesAction"></td>
                     </tr>
 
                 </tbody>
             </table>
 
-            <button className="TeacherButton" id="AddNotesButton">Add Notes</button>
+            <button className="TeacherButton" id="AddNotesButton">Add Note</button>
         </div>
     );
 }
