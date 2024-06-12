@@ -7,7 +7,7 @@ function StudentNavbar(props) {
     function handleLogout() {
         axios({
             method: "POST",
-            url: "/logout"
+            url: "https://codeninjawebsite.onrender.com/logout"
         })
         .then((response) => {
             props.removeToken()
