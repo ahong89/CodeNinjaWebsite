@@ -1,11 +1,11 @@
 #StudentListContainer {
-    width: 32vw;
+    width: 26vw;
     height: 100%;
 }
 
 #StudentListTitle {
     text-align: left;
-    padding: 2% 5% 0 4%;
+    padding: 2% 0% 0 5%;
 }
 
 #StudentList {
@@ -18,12 +18,12 @@
 }
 
 .StudentSearchInput {
-    margin: 0.9vw 0 0 6.5vw;
+    margin: 0.9vw 0 0 3.5vw;
 }
 
 .StudentSearchInput input {
     overflow: auto;
-    width: 100%;
+    width: 90%;
     height: 80%;
     background: transparent;
     border: none;
@@ -41,7 +41,7 @@
     border: 0.5px solid rgba(255, 255, 255, 0.551);
     box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
     background-color: rgba(255, 255, 255, 0);
-    width: 28vw;
+    width: 22.7vw;
     height: 5vh;
     margin: 1vh;
     color: white;

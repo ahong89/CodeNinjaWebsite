@@ -1,0 +1,52 @@
+#StudentNotesTableContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+#StudentNotesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1% auto 0;
+    table-layout: fixed;
+}
+
+#StudentNotesTableHeader {
+    font-size: 1vw;
+    font-style: italic;
+    height: 3vw;
+}
+
+#StudentNotesTable .StudentNote {
+    width: 50%;
+    height: 3vw;
+    text-align: left;
+}
+
+#StudentNotesTable tr th {
+    border-bottom: 1px rgb(139, 139, 139) solid;
+}
+
+#StudentNotesTable .StudentNote:hover {
+    background-color: rgb(200, 200, 200);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#StudentNotesTable th {
+    text-align: left;
+}
+
+.StudentNotesDate {
+    width: 10%;
+}
+
+.StudentNotesInfo {
+    width: 80%;
+}
+
+.StudentNotesAction {
+    width: 10%;
+}
+

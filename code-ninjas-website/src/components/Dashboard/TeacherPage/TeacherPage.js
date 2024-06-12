@@ -38,10 +38,10 @@ function TeacherPage(props) {
       <div className="TeacherPage">
         <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated} setIsTeacher={props.setIsTeacher}/>
         <div id="TeacherMainContainer">
-            <div className="Tab">
+            <div className="TeacherPageTab">
                 <StudentList studentData={studentData} setCurrStudent={setCurrStudent}/>
             </div>
-            <div className="Tab">
+            <div className="TeacherPageTab">
                 <StudentProfile token={props.token} studentData={studentData} updateData={getData} setCurrStudent={setCurrStudent} currStudent={currStudent}/>
             </div>
         </div>

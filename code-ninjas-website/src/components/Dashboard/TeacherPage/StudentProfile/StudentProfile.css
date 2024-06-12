@@ -1,15 +1,81 @@
+#StudentProfileMainContainer {
+    overflow: auto;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    width: 70vw;
+}
+
+#StudentDataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh
+}
+
+#StudentNotesContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 50%;
+}
+
+.StudentNotesInputBox {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 0.15vw solid rgba(255, 255, 255, .2);
+    border-radius: 0.6vw;
+    color: white;
+    padding-left: 5%;
+    font-size: 1vw;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.StudentNotesInputBox::placeholder {
+    color: rgba(255, 255, 255, 0.608);
+}
+
+.StudentNotesInputTitle {
+    /* margin-top: 0.8vw; */
+    font-size: 1vw;
+    text-align: left;
+    margin-bottom: 0.2vw;
+}
+
+#StudentNotesInputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+#StudentTextNotesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1%;
+    height: 100%;
+    overflow: auto;
+    width: 50%;
+}
+
 #StudentProfileContainer {
     display: flex;
     flex-direction: column;
-    width: 64vw;
     height: 100%;
+    width: 100%;
 }
 
 #StudentInfoContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 75vh;
+    height: 50%;
 }
 
 #StudentProfileTitle {
@@ -41,10 +107,23 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1% auto 0;
+    table-layout: fixed;
 }
 
 #StudentTaskListTitle {
     /* text-align: center; */
+}
+
+#StudentTaskName {
+    width: 44%;
+}
+
+#StudentTaskDueDate {
+    width: 28%;
+}
+
+#StudentTaskCompletion {
+    width: 28%;
 }
 
 #StudentTaskListHeader{
