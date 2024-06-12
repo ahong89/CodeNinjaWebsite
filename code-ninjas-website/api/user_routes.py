@@ -1,4 +1,4 @@
-from __main__ import api, userLogin_database, userData_database
+from app import api, userLogin_database, userData_database
 import json
 from flask import request, jsonify
 from datetime import datetime, timedelta, timezone
