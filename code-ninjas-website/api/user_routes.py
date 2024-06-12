@@ -29,7 +29,19 @@ def signup():
             "join_date": current_datetime.strftime("%m/%d/%Y"),
             "nb": 0,
             "tasks": [[]],
-            "notes": [[]],
+            "notes": {
+                "rank": "n/a",
+                "age": "n/a",
+                "membership": "n/a",
+                "sensei": "n/a",
+                "platform": "n/a",
+                "dateofbirth": "n/a",
+                "lastcontacted": "n/a",
+                "lastadvanced": "n/a",
+                "progress": "n/a",
+                "status": "n/a",
+                "entries": [[]]
+            },
             "isTeacher": False
         }
     
