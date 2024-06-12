@@ -1,16 +1,13 @@
 #StudentProfileMainContainer {
-    overflow: auto;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none; 
     width: 70vw;
+    overflow: hidden;
 }
 
 #StudentDataContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 110vh
+    height: 130vh
 }
 
 #StudentNotesMainContainer {
@@ -26,6 +23,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 1vw;
     height: 100%;
 }
 
@@ -58,7 +56,6 @@
 #StudentNotesInputContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     width: 38%;
 }
@@ -75,9 +72,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     width: 48%;
 }
 
@@ -94,6 +90,7 @@
     justify-content: space-evenly;
     height: 50%;
     margin-top: 1vw;
+    overflow: hidden;
 }
 
 #StudentProfileTitle {
@@ -160,11 +157,11 @@
     border-bottom: 1px rgb(139, 139, 139) solid;
 }
 
-#StudentTaskList .StudentTask:hover {
+/* #StudentTaskList .StudentTask:hover {
     background-color: rgb(200, 200, 200);
     transition: 0.2s;
     cursor: pointer;
-}
+} */
 
 #StudentTaskListHeader th {
     text-align: left;
@@ -251,4 +248,8 @@
 
 #StudentInfoFillerText {
     font-size: 2.6vw;
+}
+
+#EditInfoButton {
+    margin-top: 0.5vw;
 }

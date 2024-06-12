@@ -11,6 +11,7 @@ body {
 
 .StudentPageMain {
     animation: fade 1.5s ease-in-out;
+    height: 100vh;
 }
 
 @keyframes fade {
@@ -42,8 +43,6 @@ body {
 }
 
 .App {
-    width: 100vw;
-    height: 100vh;
     background-color: rgba(38,40,51,255);
     color: white;
     background-size: cover;
