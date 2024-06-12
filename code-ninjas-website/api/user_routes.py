@@ -29,6 +29,7 @@ def signup():
             "join_date": current_datetime.strftime("%m/%d/%Y"),
             "nb": 0,
             "tasks": [[]],
+            "notes": [[]],
             "isTeacher": False
         }
     

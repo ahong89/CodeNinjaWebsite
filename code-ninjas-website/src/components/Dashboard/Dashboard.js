@@ -6,7 +6,7 @@ import TeacherPage from './TeacherPage/TeacherPage.js'
 import StudentPage from './StudentPage/StudentPage.js'
 
 function Dashboard(props) {
-    const [ isTeacher, setIsTeacher ] = useState(props.token && getAccType(props.token))
+    const [ isTeacher, setIsTeacher ] = useState(getAccType(props.token))
 
     function getAccType(token) {
         axios({
@@ -26,7 +26,7 @@ function Dashboard(props) {
             console.log(error.response.headers)
           }
         })
-        return (false);
+        return null;
       }
 
     return (
