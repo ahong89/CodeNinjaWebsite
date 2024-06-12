@@ -1,9 +1,9 @@
 {
   "name": "code-ninjas-website",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "proxy": "http://192.168.0.183:50100/",
-  "homepage": "https://Phrygan.github.io/CodeNinjaWebsite",
+  "homepage": "https://phrygan.github.io/CodeNinjaWebsite",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
