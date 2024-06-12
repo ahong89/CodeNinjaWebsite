@@ -32,7 +32,6 @@ function Login(props) {
           })
           .then((response) => {
             props.setToken(response.data.access_token)
-            props.setIsTeacher(response.data.access_token)
             props.setAuthentication(true)
             navigate('/dashboard')
           }).catch((error) => {
@@ -98,7 +97,7 @@ function Login(props) {
                     <p>Don't have an account? <a onClick={directToSignup}>Register</a></p>
                 </div>
             </form>
-        </div>
+            </div>
         </div>
     )
 }

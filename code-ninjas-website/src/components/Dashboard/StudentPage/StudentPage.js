@@ -4,7 +4,7 @@ import Navbar from './Navbar/StudentNavbar.js'
 import Profile from './Profile/Profile.js'
 import Tasks from './Tasks/Tasks.js'
 import Progress from './Progress/Progress.js'
-import useToken from "../useToken.js";
+import useToken from "../../useToken.js";
 import axios from 'axios';
 
 function StudentPage(props) {

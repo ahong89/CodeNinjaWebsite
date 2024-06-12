@@ -3,7 +3,7 @@ import { FaUser } from "react-icons/fa";
 import { CiUser } from "react-icons/ci";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
-import profilePicture from '../../../assets/profilepicture4.png'
+import profilePicture from './../../../../assets/profilepicture4.png'
 
 function Profile(props) {
     return (

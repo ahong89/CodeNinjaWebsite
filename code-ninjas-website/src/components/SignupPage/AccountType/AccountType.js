@@ -2,7 +2,7 @@ import './AccountType.css';
 import AccountTypeDisplay from './AccountTypeDisplay/AccountTypeDisplay.js'
 import axios from 'axios';
 
-function StudentPage(props) {
+function AccountType(props) {
 
   return (
     <div className="AccountType fade-in">
@@ -13,4 +13,4 @@ function StudentPage(props) {
   );
 }
 
-export default StudentPage;
+export default AccountType;
