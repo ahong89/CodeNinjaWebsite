@@ -81,7 +81,7 @@
     padding: 0.9% 0 0 2%;
 }
 
-#StudentTasksContainer {
+#StudentTasksMainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,15 +113,19 @@
 }
 
 #StudentTaskName {
-    width: 44%;
+    width: 40%;
 }
 
 #StudentTaskDueDate {
-    width: 28%;
+    width: 24%;
 }
 
 #StudentTaskCompletion {
-    width: 28%;
+    width: 24%;
+}
+
+#StudentTaskAction {
+    width: 12%;
 }
 
 #StudentTaskListHeader{

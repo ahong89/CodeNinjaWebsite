@@ -1,4 +1,4 @@
-.StudentNotesModalContainer {
+.StudentTaskModalContainer {
   position: fixed;
   z-index: 1;
   left: 0;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.StudentNotesModal {
+.StudentTaskModal {
   padding: 2rem;
   width: 25em;
   border-radius: 1vw;
@@ -21,7 +21,7 @@
   background-color: rgba(38, 40, 51, 255);
 }
 
-.StudentNotesModal .StudentNotesModalBtn {
+.StudentTaskModal .StudentTaskModalBtn {
   width: 4.5vw;
   height: 2vw;
   font-size: 0.8rem;
@@ -34,36 +34,36 @@
   color: white;
 }
 
-.StudentNotesModalAddBtn {
+.StudentTaskModalAddBtn {
   margin-left: auto;
   margin-right: 0.5rem;
 }
 
-.StudentNotesModalCancelBtn {
+.StudentTaskModalCancelBtn {
   margin-right: auto;
   margin-left: 0.5rem;
 }
 
-#StudentNotesModalBtnsContainer {
+#StudentTaskModalBtnsContainer {
   display: flex;
 
 }
 
-.StudentNotesModal .StudentNotesModalBtn:hover {
+.StudentTaskModal .StudentTaskModalBtn:hover {
   cursor: pointer;
   background-color: rgb(200, 200, 200);
   transition: 0.2s;
 }
 
-.StudentNotesFormContainer {
+.StudentTaskFormContainer {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
 }
 
-.StudentNotesFormContainer input,
-.StudentNotesFormContainer textarea,
-.StudentNotesFormContainer select {
+.StudentTaskFormContainer input,
+.StudentTaskFormContainer textarea,
+.StudentTaskFormContainer select {
   border: 0.15vw solid rgba(255, 255, 255, 0.2);
   background: transparent;
   color: white;
@@ -73,15 +73,15 @@
   resize: none;
 }
 
-.StudentNotesFormContainer textarea::-webkit-scrollbar{
+.StudentTaskFormContainer textarea::-webkit-scrollbar{
   display: none;
 }
 
-.StudentNotesFormContainer textarea {
+.StudentTaskFormContainer textarea {
   height: 6rem;
 }
 
-.StudentNotesFormContainer label {
+.StudentTaskFormContainer label {
   margin-bottom: 0.2rem;
 }
 

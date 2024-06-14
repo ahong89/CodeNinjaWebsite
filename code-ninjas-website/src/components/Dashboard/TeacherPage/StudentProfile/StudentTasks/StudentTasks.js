@@ -1,40 +1,62 @@
 import './StudentTasks.css'
+import StudentTasksTable from '../StudentTasksTable/StudentTasksTable.js'
+import StudentTasksModal from '../StudentTasksModal/StudentTasksModal.js'
+
+import { useState } from 'react';
 
 function StudentTasks(props) {
-    return (
-        <div id="StudentTasksContainer">
-            <h2 id="StudentTaskListTitle">Tasks</h2>
-            <table id="StudentTaskList">
-                <thead>
-                    <tr id="StudentTaskListHeader">
-                        <th id="StudentTaskName">TASK NAME</th>
-                        <th id="StudentTaskDueDate">DUE DATE</th>
-                        <th id="StudentTaskCompletion">COMPLETION</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {props.currStudent.tasks?.map((rowContent, rowID) => (
-                        <TableRow
-                            rowContent={rowContent}
-                            key={rowID}
-                        />
-                    ))}
-                </tbody>
-            </table>
-            <button className="TeacherButton" id="TaskEditorButton">Edit Tasks</button>
-        </div>
-    )
-}
+    const [modalOpen, setModalOpen] = useState(false);
+    const [rows, setRows] = useState([
+        {
+            name: "Complete this project",
+            date: "06/24/2024",
+            completion: "in progress",
+        },
+    ]);
+    const [rowToEdit, setRowToEdit] = useState(null);
 
-function TableRow(props) {
-    let row = props.rowContent;
+    const handleDeleteRow = (targetIndex) => {
+        setRows(rows.filter((_, idx) => idx !== targetIndex));
+    };
+
+    const handleEditRow = (idx) => {
+        setRowToEdit(idx);
+        setModalOpen(true);
+    };
+
+    const handleSubmit = (newRow) => {
+        rowToEdit === null
+            ? setRows([...rows, newRow])
+            : setRows(
+                rows?.map((currRow, idx) => {
+                    if (idx !== rowToEdit) return currRow;
+
+                    return newRow;
+                })
+            );
+    };
+
     return (
-        <tr className="StudentTask">
-            {row?.map((val, rowID) => (
-                <th key={rowID}>{val}</th>
-            ))}
-        </tr>
+        <div id="StudentTasksMainContainer">
+            <div id="StudentTasksContainer">
+                <StudentTasksTable rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+                <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
+                    Add Task
+                </button>
+            </div>
+
+            {modalOpen && (
+                <StudentTasksModal
+                    closeModal={() => {
+                        setModalOpen(false);
+                        setRowToEdit(null);
+                    }}
+                    onSubmit={handleSubmit}
+                    defaultValue={rowToEdit !== null && rows[rowToEdit]}
+                />
+            )}
+        </div>
     );
 }
 
-export default StudentTasks
+export default StudentTasks;

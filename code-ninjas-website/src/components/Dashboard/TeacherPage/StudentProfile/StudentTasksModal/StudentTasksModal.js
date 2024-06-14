@@ -1,17 +1,18 @@
-import './StudentNotesModal.css';
+import './StudentTasksModal.css';
 import { useState } from 'react';
 
-function StudentNotesModal({ closeModal, onSubmit, defaultValue }) {
+function StudentTasksModal({ closeModal, onSubmit, defaultValue }) {
     const [formState, setFormState] = useState(
         defaultValue || {
+            name: "",
             date: "",
-            notes: "",
+            completion: "Incomplete",
         }
     );
     const [errors, setErrors] = useState("");
 
     const validateForm = () => {
-        if (formState.date && formState.notes) {
+        if (formState.name && formState.date && formState.completion) {
             setErrors("");
             return true;
         } else {
@@ -43,31 +44,36 @@ function StudentNotesModal({ closeModal, onSubmit, defaultValue }) {
 
     return (
         <div
-            className="StudentNotesModalContainer"
+            className="StudentTaskModalContainer"
             onClick={(e) => {
-                if (e.target.className === "StudentNotesModalContainer") closeModal();
+                if (e.target.className === "StudentTaskModalContainer") closeModal();
             }}
         >
-            <div className="StudentNotesModal">
+            <div className="StudentTaskModal">
                 <form>
-                    <div className="StudentNotesFormContainer">
+                    <div className="StudentTaskFormContainer">
+                        <label htmlFor="name">Task Name</label>
+                        <input name="name" onChange={handleChange} value={formState.name} />
+                    </div>
+
+                    <div className="StudentTaskFormContainer">
                         <label htmlFor="date">Date</label>
                         <input name="date" onChange={handleChange} value={formState.date} />
                     </div>
-                    <div className="StudentNotesFormContainer">
+                    {/* <div className="StudentTaskFormContainer">
                         <label htmlFor="notes">Notes</label>
                         <textarea
                             name="notes"
                             onChange={handleChange}
                             value={formState.notes}
                         />
-                    </div>
-                    {errors && <div className="StudentNotesErrorContainer">{`Please include: ${errors}`}</div>}
+                    </div> */}
+                    {errors && <div className="StudentTaskErrorContainer">{`Please include: ${errors}`}</div>}
                     <div id="StudentNotesModalBtnsContainer">
-                        <button type="submit" className="StudentNotesModalAddBtn StudentNotesModalBtn" onClick={handleSubmit}>
+                        <button type="submit" className="StudentTaskModalAddBtn StudentTaskModalBtn" onClick={handleSubmit}>
                             Confirm
                         </button>
-                        <button type="cancel" className="StudentNotesModalCancelBtn StudentNotesModalBtn" onClick={closeModal}>
+                        <button type="cancel" className="StudentTaskModalCancelBtn StudentTaskModalBtn" onClick={closeModal}>
                             Cancel
                         </button>
                     </div>
@@ -77,4 +83,4 @@ function StudentNotesModal({ closeModal, onSubmit, defaultValue }) {
     );
 }
 
-export default StudentNotesModal;
+export default StudentTasksModal;
