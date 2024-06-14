@@ -1,8 +1,8 @@
 {
   "name": "code-ninjas-website",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://phrygan.github.io/CodeNinjaWebsite/",
+  "private": false,
+  "homepage": "https://phrygan.github.io/CodeNinjaWebsite",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
