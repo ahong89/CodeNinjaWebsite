@@ -32,11 +32,8 @@ function StudentNotesModal({ closeModal, onSubmit, defaultValue }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         if (!validateForm()) return;
-
         onSubmit(formState);
-
         closeModal();
     };
 

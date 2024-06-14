@@ -10,6 +10,7 @@ import axios from 'axios';
 function TeacherPage(props) {
 
   const [studentData, setStudentData] = useState(() => getData());
+  const [ filteredStudents, setFilteredStudents ] = useState({})
   const [currStudent, setCurrStudent] = useState(null)
 
   function getData() {
@@ -24,7 +25,7 @@ function TeacherPage(props) {
         const res = response.data
         res.access_token && props.setToken(res.access_token)
         setStudentData(res)
-        console.log(studentData)
+        setFilteredStudents(res)
         return res
       }).catch((error) => {
         if (error.response) {
@@ -50,7 +51,7 @@ function TeacherPage(props) {
         <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated} setIsTeacher={props.setIsTeacher} />
         <div id="TeacherMainContainer">
           <div className="TeacherPageTab">
-            <StudentList studentData={studentData} setStudentData={setStudentData} currStudent={currStudent} setCurrStudent={setCurrStudent} />
+            <StudentList filteredStudents={filteredStudents} setFilteredStudents={setFilteredStudents} studentData={studentData} setStudentData={setStudentData} currStudent={currStudent} setCurrStudent={setCurrStudent} />
           </div>
           <div className="TeacherPageTab">
             {currStudent === null ?
