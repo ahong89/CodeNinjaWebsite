@@ -64,7 +64,7 @@ function StudentInputNotes(props) {
                 </div>
             </div>
 
-            <button className="TeacherButton" id="EditInfoButton" onClick={handleEditStudentInformation}>{editMode ? "Submit" : "Edit"}</button>
+            <button className="TeacherButton" id="EditInfoButton" onClick={handleEditStudentInformation}>{editMode ? "Confirm" : "Edit"}</button>
         </div>
     )
 }

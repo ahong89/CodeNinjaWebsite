@@ -9,8 +9,8 @@ import axios from 'axios';
 
 function TeacherPage(props) {
 
-  const [ studentData, setStudentData ] = useState(() => getData());
-  const [ currStudent, setCurrStudent ] = useState(null)
+  const [studentData, setStudentData] = useState(() => getData());
+  const [currStudent, setCurrStudent] = useState(null)
 
   function getData() {
     axios({
@@ -20,43 +20,42 @@ function TeacherPage(props) {
         Authorization: 'Bearer ' + props.token
       }
     })
-    .then((response) => {
-      console.log(response.data)
-      const res = response.data
-      res.access_token && props.setToken(res.access_token)
-      setStudentData(res)
-      return res
-    }).catch((error) => {
-      if (error.response) {
-        console.log(error.response)
-        console.log(error.response.status)
-        console.log(error.response.headers)
-      }
-    })
+      .then((response) => {
+        const res = response.data
+        res.access_token && props.setToken(res.access_token)
+        setStudentData(res)
+        console.log(studentData)
+        return res
+      }).catch((error) => {
+        if (error.response) {
+          console.log(error.response)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        }
+      })
     return ([]);
   }
 
   function updateData(attr, value) {
     let newData = {}
-    let currStudentCopy = {...currStudent}
+    let currStudentCopy = { ...currStudent }
     currStudentCopy[attr] = value
-    newData[currStudent.name] = currStudentCopy 
-    setStudentData(prevStudentData => ({...prevStudentData, ...newData})) 
+    newData[currStudent.name] = currStudentCopy
+    setStudentData(prevStudentData => ({ ...prevStudentData, ...newData }))
   }
-
 
   return (
     <div id="TeacherPageContainer">
       <div className="TeacherPage">
-        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated} setIsTeacher={props.setIsTeacher}/>
+        <Navbar removeToken={props.removeToken} setIsAuthenticated={props.setIsAuthenticated} setIsTeacher={props.setIsTeacher} />
         <div id="TeacherMainContainer">
           <div className="TeacherPageTab">
-              <StudentList studentData={studentData} setStudentData={setStudentData} currStudent={currStudent} setCurrStudent={setCurrStudent}/>
+            <StudentList studentData={studentData} setStudentData={setStudentData} currStudent={currStudent} setCurrStudent={setCurrStudent} />
           </div>
           <div className="TeacherPageTab">
             {currStudent === null ?
-                <NoStudentSelected />
-                : <StudentProfile token={props.token} currStudent={currStudent} setCurrStudent={setCurrStudent} updateData={updateData} />
+              <NoStudentSelected />
+              : <StudentProfile token={props.token} currStudent={currStudent} setCurrStudent={setCurrStudent} updateData={updateData} />
             }
           </div>
         </div>
