@@ -24,10 +24,10 @@ def get_allstudents():
         return {"msg": "Account not authorized to complete action"}, 400
     
     allStudents = userData_database.userData.find({"isTeacher": False})
-    response = []
+    response = {}
     for student in allStudents:
         del student['_id']
-        response.append(student)
+        response[student["name"]] = student
     return response, 200
 
 # setters

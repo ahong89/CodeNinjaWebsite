@@ -24,15 +24,15 @@ function StudentList(props) {
             </div>
             
             <table id="StudentList">
-                {/* <tr className="StudentRow"><Student name="Andrew Hong"/></tr>
-                <tr className="StudentRow"><Student name="Nathan Zhang"/></tr>
-                <tr className="StudentRow"><Student name="Harsh Akunuri"/></tr> */}
-                {students.map((currStudent, studentID) => (
-                    <tr className="StudentRow"><Student
-                        setCurrStudent={props.setCurrStudent}
-                        student={currStudent}
-                    /></tr>
-                ))}
+                <tbody>
+                    {Object.keys(students).map((currStudent, studentID) => (
+                        <Student
+                            key={studentID}
+                            setCurrStudent={props.setCurrStudent}
+                            student={students[currStudent]}
+                        />
+                    ))}
+                </tbody>
             </table>
         </div>
     )
@@ -46,7 +46,11 @@ function Student(props) {
     }
 
     return (
-        <button className="Student" onClick={handleStudentChange}>{props.student.name}</button>
+        <tr className="StudentRow">
+            <td>
+                <button className="Student" onClick={handleStudentChange}>{props.student.name}</button>
+            </td>
+        </tr>
     )
 }
 

@@ -4,6 +4,7 @@ from flask import request, jsonify
 from datetime import datetime, timedelta, timezone
 from flask_jwt_extended import create_access_token, get_jwt, get_jwt_identity, unset_jwt_cookies, jwt_required, JWTManager
 from passlib.hash import pbkdf2_sha256
+from flask_cors import cross_origin
 
 # sign up
 @api.route('/signup', methods=["POST"])
@@ -57,6 +58,7 @@ def signup():
 
 # logging in
 @api.route('/token', methods=["POST"])
+@cross_origin()
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)

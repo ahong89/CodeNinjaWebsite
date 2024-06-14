@@ -11,7 +11,7 @@ function Dashboard(props) {
     function getAccType(token) {
         axios({
           method: "GET",
-          url: "https://codeninjawebsite.onrender.com/getacctype",
+          url: process.env.REACT_APP_BACKEND_IP + "/getacctype",
           headers: {
             Authorization: 'Bearer ' + token
           }
