@@ -1,7 +1,7 @@
 from app import api, userData_database
 from flask_jwt_extended import create_access_token, get_jwt, get_jwt_identity, unset_jwt_cookies, jwt_required, JWTManager
 import json
-
+from flask import request
 
 @api.route('/profile', methods=["GET"])
 @jwt_required()
@@ -17,3 +17,14 @@ def my_profile():
         return profile
 
     return {"msg": "Something went wrong with your token"}, 400
+
+@api.route('/submitlink', methods=["POST"])
+@jwt_required()
+def submit_link():
+    tasks = request.json.get("tasks")
+    studentQuery = {"email": request.json.get("email")}
+    newData = { "$set": { 'tasks': tasks } }
+    if userData_database.userData.update_one(studentQuery, newData):
+        return {"msg": request.json.get("email") + "'s tasks have been updated successfully"}, 200
+
+    return {"msg": "Student not found"}, 500
