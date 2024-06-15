@@ -24,7 +24,15 @@
     margin: 2% auto 0;
 }
 
-#TaskListHeader{
+#TaskListContainer {
+    max-height: 37vh;
+    overflow: auto;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#TaskListHeader {
     font-size: 1vw;
     font-style: italic;
     height: 3vw;
@@ -46,8 +54,18 @@ tr th {
     cursor: pointer;
 }
 
-#TaskListHeader > th {
+#TaskListHeader>th {
     text-align: left;
 }
 
+#TaskName {
+    width: 64%;
+}
 
+#TaskDate {
+    width: 19%;
+}
+
+#TaskCompletion {
+    width: 17%;
+}

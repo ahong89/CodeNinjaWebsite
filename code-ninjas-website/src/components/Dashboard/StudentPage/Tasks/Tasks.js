@@ -9,26 +9,28 @@ function Tasks(props) {
         <div id="TasksContainer">
             <div id="TaskTitleContainer">
                 <h1 id="TaskTitle">Tasks</h1>
-                <BsListTask id="TaskListIcon"/>
+                <BsListTask id="TaskListIcon" />
             </div>
-            
-            <table id="TaskList">
-                <thead>
-                    <tr id="TaskListHeader">
-                        <th>TASK NAME</th>
-                        <th>DUE DATE</th>
-                        <th>COMPLETION</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {body?.map((rowContent, rowID) => (
-                        <TableRow
-                            rowContent={rowContent}
-                            key={rowID}
-                        />
-                    ))}
-                </tbody>
-            </table>
+
+            <div id="TaskListContainer">
+                <table id="TaskList">
+                    <thead>
+                        <tr id="TaskListHeader">
+                            <th id="TaskName">TASK NAME</th>
+                            <th id="TaskDate">DUE DATE</th>
+                            <th id="TaskCompletion">COMPLETION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {body?.map((rowContent, rowID) => (
+                            <TableRow
+                                rowContent={rowContent}
+                                key={rowID}
+                            />
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
