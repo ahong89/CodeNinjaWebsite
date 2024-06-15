@@ -9,25 +9,25 @@ function Dashboard(props) {
     const [ isTeacher, setIsTeacher ] = useState(getAccType(props.token))
 
     function getAccType(token) {
-        axios({
-          method: "GET",
-          url: process.env.REACT_APP_BACKEND_IP + "/getacctype",
-          headers: {
-            Authorization: 'Bearer ' + token
-          }
-        })
-        .then((response) => {
-          setIsTeacher(response.data['isTeacher'])
-          return response.data['isTeacher']
-        }).catch((error) => {
-          if (error.response) {
-            console.log(error.response)
-            console.log(error.response.status)
-            console.log(error.response.headers)
-          }
-        })
-        return null;
-      }
+      axios({
+        method: "GET",
+        url: process.env.REACT_APP_BACKEND_IP + "/getacctype",
+        headers: {
+          Authorization: 'Bearer ' + token
+        }
+      })
+      .then((response) => {
+        setIsTeacher(response.data['isTeacher'])
+        return response.data['isTeacher']
+      }).catch((error) => {
+        if (error.response) {
+          console.log(error.response)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        }
+      })
+      return null;
+    }
 
     return (
         <>

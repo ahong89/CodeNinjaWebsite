@@ -1,29 +1,27 @@
-import './StudentTasks.css'
-import StudentTasksTable from '../StudentTasksTable/StudentTasksTable.js'
-import StudentTasksModal from '../StudentTasksModal/StudentTasksModal.js'
+import StudentNotesModal from '../StudentNotesModal/StudentNotesModal.js'
+import StudentNotesTable from '../StudentNotesTable/StudentNotesTable.js'
 
-import { useState } from 'react';
+import { useState } from 'react'
 import axios from 'axios';
 
-function StudentTasks(props) {
+function StudentEntries(props) {
     const [modalOpen, setModalOpen] = useState(false);
     const [rowToEdit, setRowToEdit] = useState(null);
 
     function updateDb(newStudent) {
         axios({
             method: "POST",
-            url: process.env.REACT_APP_BACKEND_IP + "/settasks",
+            url: process.env.REACT_APP_BACKEND_IP + "/setnotes",
             headers: {
                 Authorization: 'Bearer ' + props.token
             },
             data: {
                 email: props.currStudent.email,
-                tasks: newStudent.tasks
+                notes: newStudent.notes
             }
         })
         .then((response) => {
             props.setCurrStudent(newStudent)
-            props.updateData("tasks", newStudent.tasks)
         }).catch((error) => {
             if (error.response) {
                 console.log(error.response)
@@ -35,11 +33,12 @@ function StudentTasks(props) {
 
     const handleDeleteRow = (targetIndex) => {
         let newStudent = {...props.currStudent}
-        let newTasks = []
-        props.currStudent.tasks?.map((currRow, idx) => {
-            if (idx !== targetIndex) newTasks.push(currRow)
+        let newEntries = []
+        props.currStudent.notes.entries?.map((currRow, idx) => {
+            if (idx !== targetIndex) newEntries.push(currRow)
         })
-        newStudent.tasks = newTasks
+        newStudent.notes.entries = newEntries
+        console.log(newEntries)
         updateDb(newStudent)
     };
 
@@ -51,9 +50,9 @@ function StudentTasks(props) {
     const handleSubmit = (newRow) => {
         let newStudent = {...props.currStudent}
         if(rowToEdit === null) {
-            newStudent.tasks.unshift(newRow)
+            newStudent.notes.entries.unshift(newRow)
         } else {
-            newStudent.tasks = props.currStudent.tasks?.map((currRow, idx) => {
+            newStudent.notes.entries = props.currStudent.notes.entries?.map((currRow, idx) => {
                 if (idx !== rowToEdit) return currRow;
                 return newRow
             })
@@ -62,24 +61,26 @@ function StudentTasks(props) {
     };
 
     return (
-        <div id="StudentTasksMainContainer">
-            <StudentTasksTable rows={props.currStudent.tasks} deleteRow={handleDeleteRow} editRow={handleEditRow} />
-            <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
-                Add Task
-            </button>
+        <div id="StudentTextNotesContainer">
+            <div id="StudentNotesTableMainContainer">
+                <StudentNotesTable rows={props.currStudent.notes.entries} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+                <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
+                    Add Note
+                </button>
+            </div>
 
             {modalOpen && (
-                <StudentTasksModal
+                <StudentNotesModal
                     closeModal={() => {
                         setModalOpen(false);
                         setRowToEdit(null);
                     }}
                     onSubmit={handleSubmit}
-                    defaultValue={rowToEdit !== null && props.currStudent.tasks[rowToEdit]}
+                    defaultValue={rowToEdit !== null && props.currStudent.notes.entries[rowToEdit]}
                 />
             )}
         </div>
-    );
+    )
 }
 
-export default StudentTasks;
+export default StudentEntries;
