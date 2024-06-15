@@ -19,7 +19,8 @@ function StudentTasksModal({ closeModal, onSubmit, defaultValue }) {
             let errorFields = [];
             for (const [key, value] of Object.entries(formState)) {
                 if (!value) {
-                    errorFields.push(key);
+                    let error = key.substring(0, 1).toUpperCase() + key.substring(1);
+                    errorFields.push(error);
                 }
             }
             setErrors(errorFields.join(", "));
