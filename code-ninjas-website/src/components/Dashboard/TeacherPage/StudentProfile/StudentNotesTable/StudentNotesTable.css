@@ -1,5 +1,5 @@
 #StudentNotesTableContainer {
-    height: 78%;
+    max-height: 44vh;
     overflow: auto;
     overflow-y: scroll;
     scrollbar-width: none;

@@ -21,20 +21,20 @@ function StudentTasks(props) {
                 tasks: newStudent.tasks
             }
         })
-        .then((response) => {
-            props.setCurrStudent(newStudent)
-            props.updateData("tasks", newStudent.tasks)
-        }).catch((error) => {
-            if (error.response) {
-                console.log(error.response)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            }
-        })
+            .then((response) => {
+                props.setCurrStudent(newStudent)
+                props.updateData("tasks", newStudent.tasks)
+            }).catch((error) => {
+                if (error.response) {
+                    console.log(error.response)
+                    console.log(error.response.status)
+                    console.log(error.response.headers)
+                }
+            })
     }
 
     const handleDeleteRow = (targetIndex) => {
-        let newStudent = {...props.currStudent}
+        let newStudent = { ...props.currStudent }
         let newTasks = []
         props.currStudent.tasks?.map((currRow, idx) => {
             if (idx !== targetIndex) newTasks.push(currRow)
@@ -49,8 +49,8 @@ function StudentTasks(props) {
     };
 
     const handleSubmit = (newRow) => {
-        let newStudent = {...props.currStudent}
-        if(rowToEdit === null) {
+        let newStudent = { ...props.currStudent }
+        if (rowToEdit === null) {
             newStudent.tasks.unshift(newRow)
         } else {
             newStudent.tasks = props.currStudent.tasks?.map((currRow, idx) => {
@@ -63,10 +63,13 @@ function StudentTasks(props) {
 
     return (
         <div id="StudentTasksMainContainer">
-            <StudentTasksTable rows={props.currStudent.tasks} deleteRow={handleDeleteRow} editRow={handleEditRow} />
-            <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
-                Add Task
-            </button>
+            <h2 id="StudentTaskListTitle">Tasks</h2>
+            <div id="StudentTasksTableContainer">
+                <StudentTasksTable rows={props.currStudent.tasks} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+                <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
+                    Add Task
+                </button>
+            </div>
 
             {modalOpen && (
                 <StudentTasksModal
