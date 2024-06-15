@@ -1,0 +1,14 @@
+#StudentTasksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+}
+
+#StudentTasksTableContainer {
+    height: 100%;
+    overflow: auto;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}

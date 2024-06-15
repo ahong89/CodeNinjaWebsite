@@ -29,7 +29,7 @@ def signup():
             "name": request.json.get("name"),
             "join_date": current_datetime.strftime("%m/%d/%Y"),
             "nb": 0,
-            "tasks": [[]],
+            "tasks": [],
             "notes": {
                 "rank": "n/a",
                 "age": "n/a",
@@ -41,7 +41,7 @@ def signup():
                 "lastadvanced": "n/a",
                 "progress": "n/a",
                 "status": "n/a",
-                "entries": [[]]
+                "entries": []
             },
             "isTeacher": False
         }
