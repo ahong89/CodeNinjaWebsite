@@ -27,7 +27,7 @@ function StudentTasksTable({ rows, deleteRow, editRow }) {
                             <tr key={idx} className="StudentTask">
                                 <td id="StudentTaskName">{row.name}</td>
                                 <td id="StudentTaskDueDate">{row.date}</td>
-                                <td id="StudentTaskCompletion">{row.completion}</td>
+                                <td id="StudentTaskCompletion"><a href={row.link} target="_blank">{row.completion}</a></td>
                                 <td className="StudentNotesAction StudentNoteIcons">
                                     <MdOutlineEdit
                                         className="StudentNoteIcon StudentNoteEditButton"
