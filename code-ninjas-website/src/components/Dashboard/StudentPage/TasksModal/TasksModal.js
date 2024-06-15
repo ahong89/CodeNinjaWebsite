@@ -54,7 +54,7 @@ function TasksModal({ closeModal, onSubmit, defaultValue }) {
                     {errors && <div className="TaskErrorContainer">{`Please include: ${errors}`}</div>}
                     <div id="TaskModalBtnsContainer">
                         <button type="submit" className="TaskModalAddBtn TaskModalBtn" onClick={handleSubmit}>
-                            Confirm
+                            Submit
                         </button>
                         <button type="cancel" className="TaskModalCancelBtn TaskModalBtn" onClick={closeModal}>
                             Cancel
