@@ -3,20 +3,44 @@ import StudentTasksTable from '../StudentTasksTable/StudentTasksTable.js'
 import StudentTasksModal from '../StudentTasksModal/StudentTasksModal.js'
 
 import { useState } from 'react';
+import axios from 'axios';
 
 function StudentTasks(props) {
     const [modalOpen, setModalOpen] = useState(false);
-    const [rows, setRows] = useState([
-        {
-            name: "Complete this project",
-            date: "06/24/2024",
-            completion: "in progress",
-        },
-    ]);
     const [rowToEdit, setRowToEdit] = useState(null);
 
+    function updateDb(newStudent) {
+        axios({
+            method: "POST",
+            url: process.env.REACT_APP_BACKEND_IP + "/settasks",
+            headers: {
+                Authorization: 'Bearer ' + props.token
+            },
+            data: {
+                email: props.currStudent.email,
+                tasks: newStudent.tasks
+            }
+        })
+        .then((response) => {
+            props.setCurrStudent(newStudent)
+            props.updateData("tasks", newStudent.tasks)
+        }).catch((error) => {
+            if (error.response) {
+                console.log(error.response)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+            }
+        })
+    }
+
     const handleDeleteRow = (targetIndex) => {
-        setRows(rows.filter((_, idx) => idx !== targetIndex));
+        let newStudent = {...props.currStudent}
+        let newTasks = []
+        props.currStudent.tasks?.map((currRow, idx) => {
+            if (idx !== targetIndex) newTasks.push(currRow)
+        })
+        newStudent.tasks = newTasks
+        updateDb(newStudent)
     };
 
     const handleEditRow = (idx) => {
@@ -25,21 +49,22 @@ function StudentTasks(props) {
     };
 
     const handleSubmit = (newRow) => {
-        rowToEdit === null
-            ? setRows([...rows, newRow])
-            : setRows(
-                rows?.map((currRow, idx) => {
-                    if (idx !== rowToEdit) return currRow;
-
-                    return newRow;
-                })
-            );
+        let newStudent = {...props.currStudent}
+        if(rowToEdit === null) {
+            newStudent.tasks.unshift(newRow)
+        } else {
+            newStudent.tasks = props.currStudent.tasks?.map((currRow, idx) => {
+                if (idx !== rowToEdit) return currRow;
+                return newRow
+            })
+        }
+        updateDb(newStudent)
     };
 
     return (
         <div id="StudentTasksMainContainer">
             <div id="StudentTasksContainer">
-                <StudentTasksTable rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+                <StudentTasksTable rows={props.currStudent.tasks} deleteRow={handleDeleteRow} editRow={handleEditRow} />
                 <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
                     Add Task
                 </button>
@@ -52,7 +77,7 @@ function StudentTasks(props) {
                         setRowToEdit(null);
                     }}
                     onSubmit={handleSubmit}
-                    defaultValue={rowToEdit !== null && rows[rowToEdit]}
+                    defaultValue={rowToEdit !== null && props.currStudent.tasks[rowToEdit]}
                 />
             )}
         </div>
