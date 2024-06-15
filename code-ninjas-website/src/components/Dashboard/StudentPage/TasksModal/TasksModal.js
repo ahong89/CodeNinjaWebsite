@@ -47,7 +47,7 @@ function TasksModal({ closeModal, onSubmit, defaultValue, taskName }) {
         >
             <div className="TaskModal">
                 <form>
-                    <h1>{taskName}</h1>
+                    <h2 className="TaskTitle">{taskName}</h2>
                     <div className="TaskFormContainer">
                         <label htmlFor="link">Link</label>
                         <input name="link" onChange={handleChange} value={formState.link} />
@@ -55,7 +55,7 @@ function TasksModal({ closeModal, onSubmit, defaultValue, taskName }) {
                     {errors && <div className="TaskErrorContainer">{`Please include: ${errors}`}</div>}
                     <div id="TaskModalBtnsContainer">
                         <button type="submit" className="TaskModalAddBtn TaskModalBtn" onClick={handleSubmit}>
-                            Confirm
+                            Submit
                         </button>
                         <button type="cancel" className="TaskModalCancelBtn TaskModalBtn" onClick={closeModal}>
                             Cancel
