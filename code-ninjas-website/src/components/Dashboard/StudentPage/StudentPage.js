@@ -48,7 +48,7 @@ function StudentPage(props) {
                 <Profile userData={userData}/>
             </div>
             <div className="StudentPageTab">
-                <Tasks userData={userData}/>
+                <Tasks userData={userData} setUserData={setUserData} token={props.token}/>
             </div>
         </div>
         <div className="StudentPageTab" id="Progress">

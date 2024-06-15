@@ -1,7 +1,7 @@
 import './TasksModal.css';
 import { useState } from 'react';
 
-function TasksModal({ closeModal, onSubmit, defaultValue }) {
+function TasksModal({ closeModal, onSubmit, defaultValue, taskName }) {
     const [formState, setFormState] = useState(
         defaultValue || {
             link: "",
@@ -46,6 +46,7 @@ function TasksModal({ closeModal, onSubmit, defaultValue }) {
         >
             <div className="TaskModal">
                 <form>
+                    <h1>{taskName}</h1>
                     <div className="TaskFormContainer">
                         <label htmlFor="link">Link</label>
                         <input name="link" onChange={handleChange} value={formState.link} />
