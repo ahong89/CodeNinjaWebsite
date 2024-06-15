@@ -50,7 +50,7 @@ function StudentEntries(props) {
     const handleSubmit = (newRow) => {
         let newStudent = {...props.currStudent}
         if(rowToEdit === null) {
-            newStudent.notes.entries.push(newRow)
+            newStudent.notes.entries.unshift(newRow)
         } else {
             newStudent.notes.entries = props.currStudent.notes.entries?.map((currRow, idx) => {
                 if (idx !== rowToEdit) return currRow;

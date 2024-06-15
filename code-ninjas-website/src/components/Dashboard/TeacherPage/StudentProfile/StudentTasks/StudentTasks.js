@@ -26,7 +26,7 @@ function StudentTasks(props) {
 
     const handleSubmit = (newRow) => {
         rowToEdit === null
-            ? setRows([...rows, newRow])
+            ? setRows([newRow, ...rows])
             : setRows(
                 rows?.map((currRow, idx) => {
                     if (idx !== rowToEdit) return currRow;
@@ -38,12 +38,10 @@ function StudentTasks(props) {
 
     return (
         <div id="StudentTasksMainContainer">
-            <div id="StudentTasksContainer">
-                <StudentTasksTable rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
-                <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
-                    Add Task
-                </button>
-            </div>
+            <StudentTasksTable rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+            <button onClick={() => setModalOpen(true)} className="TeacherButton" id="AddNotesButton">
+                Add Task
+            </button>
 
             {modalOpen && (
                 <StudentTasksModal
