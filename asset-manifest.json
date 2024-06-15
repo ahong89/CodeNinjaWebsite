@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CodeNinjaWebsite/static/css/main.7f2532d6.css",
-    "main.js": "/CodeNinjaWebsite/static/js/main.23f41e3c.js",
+    "main.css": "/CodeNinjaWebsite/static/css/main.9607f7d8.css",
+    "main.js": "/CodeNinjaWebsite/static/js/main.a0837921.js",
     "static/media/signup-background.jpg": "/CodeNinjaWebsite/static/media/signup-background.021a8ae30df53c404bd0.jpg",
     "static/media/login-background.jpg": "/CodeNinjaWebsite/static/media/login-background.f01defd22bcc16e38e54.jpg",
     "static/media/profilepicture4.png": "/CodeNinjaWebsite/static/media/profilepicture4.319cad34f738657e3064.png",
     "index.html": "/CodeNinjaWebsite/index.html",
-    "main.7f2532d6.css.map": "/CodeNinjaWebsite/static/css/main.7f2532d6.css.map",
-    "main.23f41e3c.js.map": "/CodeNinjaWebsite/static/js/main.23f41e3c.js.map"
+    "main.9607f7d8.css.map": "/CodeNinjaWebsite/static/css/main.9607f7d8.css.map",
+    "main.a0837921.js.map": "/CodeNinjaWebsite/static/js/main.a0837921.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f2532d6.css",
-    "static/js/main.23f41e3c.js"
+    "static/css/main.9607f7d8.css",
+    "static/js/main.a0837921.js"
   ]
 }
