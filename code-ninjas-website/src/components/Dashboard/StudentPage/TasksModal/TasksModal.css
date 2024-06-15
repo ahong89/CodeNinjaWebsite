@@ -1,0 +1,94 @@
+.Task ModalContainer {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Task Modal {
+    padding: 2rem;
+    width: 25em;
+    border-radius: 1vw;
+    border: 0.5px solid rgba(255, 255, 255, 0.551);
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
+    max-width: 97.5vw;
+    background-color: rgba(38, 40, 51, 255);
+}
+
+.Task Modal .Task ModalBtn {
+    width: 5vw;
+    height: 2vw;
+    font-size: 1rem;
+    overflow: hidden;
+    border-radius: 0.5vw;
+    border: 0.5px solid rgba(255, 255, 255, 0.551);
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, .2);
+    background-color: rgba(38, 40, 51, 255);
+    margin-top: 1vw;
+    color: white;
+}
+
+.Task ModalAddBtn {
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+.Task ModalCancelBtn {
+    margin-right: auto;
+    margin-left: 0.5rem;
+}
+
+#Task ModalBtnsContainer {
+    display: flex;
+
+}
+
+.Task Modal .Task ModalBtn:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+    transition: 0.2s;
+}
+
+.Task FormContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.Task FormContainer input,
+.Task FormContainer textarea,
+.Task FormContainer select {
+    border: 0.15vw solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    resize: none;
+}
+
+.Task FormContainer textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.Task FormContainer textarea {
+    height: 6rem;
+}
+
+.Task FormContainer label {
+    margin-bottom: 0.2rem;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #df4759;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+}
