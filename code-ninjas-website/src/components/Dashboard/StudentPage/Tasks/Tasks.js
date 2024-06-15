@@ -37,8 +37,8 @@ function TableRow(props) {
     let row = props.rowContent;
     return (
         <tr className="Task">
-            {row?.map((val, rowID) => (
-                <th key={rowID}>{val}</th>
+            {Object.keys(row)?.map((key, rowID) => (
+                <th key={rowID}>{row[key]}</th>
             ))}
         </tr>
     );

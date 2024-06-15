@@ -21,19 +21,20 @@ function TeacherPage(props) {
         Authorization: 'Bearer ' + props.token
       }
     })
-      .then((response) => {
-        const res = response.data
-        res.access_token && props.setToken(res.access_token)
-        setStudentData(res)
-        setFilteredStudents(res)
-        return res
-      }).catch((error) => {
-        if (error.response) {
-          console.log(error.response)
-          console.log(error.response.status)
-          console.log(error.response.headers)
-        }
-      })
+    .then((response) => {
+      const res = response.data
+      res.access_token && props.setToken(res.access_token)
+      console.log(res)
+      setStudentData(res)
+      setFilteredStudents(res)
+      return res
+    }).catch((error) => {
+      if (error.response) {
+        console.log(error.response)
+        console.log(error.response.status)
+        console.log(error.response.headers)
+      }
+    })
     return ([]);
   }
 

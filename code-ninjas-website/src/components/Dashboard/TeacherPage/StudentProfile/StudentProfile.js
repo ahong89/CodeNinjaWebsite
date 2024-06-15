@@ -18,7 +18,7 @@ function StudentProfile(props) {
                 </div>
 
                 <div id="StudentInfoContainer">
-                    <StudentTasks rows={props.currStudent.tasks} />
+                    <StudentTasks updateData={props.updateData} currStudent={props.currStudent} setCurrStudent={props.setCurrStudent} token={props.token}/>
                     <StudentPoints updateData={props.updateData} currStudent={props.currStudent} setCurrStudent={props.setCurrStudent} token={props.token} />
                 </div>
             </div>
