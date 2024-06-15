@@ -11,6 +11,11 @@
   justify-content: center;
 }
 
+.TaskTitle {
+    text-align: center;
+    margin-bottom: 0.5vw;
+}
+
 .TaskModal {
   padding: 2rem;
   width: 25em;
