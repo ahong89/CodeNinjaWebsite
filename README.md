@@ -11,6 +11,7 @@
   </p>
 </div>
 
+<br>
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -27,7 +28,7 @@ The Code Ninjas Livingston Website acts as a homework portal for students. The w
 * <a href="https://pypi.org/project/waitress/"> Waitress </a>
 * <a href="https://gunicorn.org/"> Gunicorn </a>
 
-
+<br>
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -79,7 +80,7 @@ Deploy newest changes of api through opening secret link in browser to manually 
 
 
 
-
+<br>
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -88,7 +89,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 
-
+<br>
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -100,6 +101,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Deleting tasks should take multiple clicks
 
 
+<br>
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -115,7 +117,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 
 
-
+<br>
 <!-- LICENSE -->
 ## License
 
@@ -123,7 +125,7 @@ Distributed under the GNU License. See `LICENSE.txt` for more information.
 
 
 
-
+<br>
 <!-- CONTACT -->
 ## Contact
 
@@ -132,7 +134,7 @@ Nathan Zhang - nathan.l.zhang@gmail.com
 Andrew Hong - honga010807@gmail.com
 
 
-
+<br>
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
