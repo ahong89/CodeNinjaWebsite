@@ -115,6 +115,15 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 
 
+
+<!-- LICENSE -->
+## License
+
+Distributed under the GNU License. See `LICENSE.txt` for more information.
+
+
+
+
 <!-- CONTACT -->
 ## Contact
 
