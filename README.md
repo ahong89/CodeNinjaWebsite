@@ -34,7 +34,6 @@ The Code Ninjas Livingston Website acts as a homework portal for students. The w
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -81,15 +80,7 @@ Deploy newest changes of api through opening secret link in browser to manually 
 
 
 <br><br/>
-<!-- USAGE EXAMPLES -->
-## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-<br><br/>
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -99,23 +90,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Add more functions to the student side in submitting assignments (unsubmit, grading, view submission)
 - [ ] Desktop and mobile compatible
 - [ ] Deleting tasks should take multiple clicks
-
-
-<br><br/>
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
 
 <br><br/>
 <!-- LICENSE -->
@@ -133,14 +107,6 @@ Nathan Zhang - nathan.l.zhang@gmail.com
 <br>
 Andrew Hong - honga010807@gmail.com
 
-
-<br><br/>
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
