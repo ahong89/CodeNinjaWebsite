@@ -103,7 +103,7 @@ Distributed under the GNU License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Nathan Zhang - nathan.l.zhang@gmail.com
+Nathan Zhang - nlzhang@ucla.edu
 <br>
 Andrew Hong - honga010807@gmail.com
 
