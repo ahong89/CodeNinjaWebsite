@@ -1,10 +1,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h1>Code Ninjas Website</h1>
+  <h1>Code Ninjas Dashboard</h1>
 
   <p align="center">
-    Convenient website for data organization at the Livingston center.
+    A convenient website for organizing student data and assignments at the Code Ninjas Livingston center.
     <br />
     <a href="https://github.com/Phrygan/CodeNinjaWebsite/tree/master/code-ninjas-website"><strong>Explore the docs »</strong></a>
     <br />
@@ -15,7 +15,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The Code Ninjas Livingston Website acts as a homework portal for students. The website also gives instructors and center directors a convenient way to manage student information and assign/review assignments.
+The Code Ninjas Dashboard serves as a dedicated homework portal for students while providing instructors and center directors with an efficient platform to manage student information, assign tasks, and review assignments.
 
 
 ### Built With
